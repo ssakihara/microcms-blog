@@ -35,15 +35,17 @@
   </v-app>
 </template>
 <style lang="scss">
+.v-application {
+  code {
+    box-shadow: none !important;
+  }
+}
+</style>
+<style lang="scss" scoped>
 .header-title {
   a {
     color: black !important;
     text-decoration: none !important;
-  }
-}
-.v-application {
-  code {
-    box-shadow: none !important;
   }
 }
 .footer {

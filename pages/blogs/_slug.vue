@@ -1,11 +1,11 @@
 <template>
   <v-container>
-    <h1 id="header-title">{{ content.title }}</h1>
+    <h1 id="page-title">{{ content.title }}</h1>
     <div id="active-content" v-html="$md.render(content.body)" />
   </v-container>
 </template>
 <style lang="scss">
-#header-title {
+#page-title {
   font-size: 40px;
   margin: 0 0 16px;
   padding: 0px;

@@ -19,6 +19,7 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    "vue/no-v-html": "off"
+    "vue/no-v-html": "off",
+    "no-console": "off"
   }
 }

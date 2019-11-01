@@ -167,7 +167,12 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {},
+    terser: {
+      terserOptions: {
+        compress: { drop_console: true }
+      }
+    }
   },
   env: {
     APP_NAME: process.env.APP_NAME || '',

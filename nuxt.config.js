@@ -54,7 +54,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/prism', '~/plugins/axios'],
+  plugins: [
+    '~/plugins/prism',
+    '~/plugins/axios',
+    { src: '~plugins/ga.js', mode: 'client' }
+  ],
   sitemap: {
     path: '/sitemap.xml',
     hostname: process.env.APP_URL,
@@ -115,18 +119,7 @@ export default {
     '@nuxtjs/markdownit',
     '@nuxtjs/dotenv',
     '@nuxtjs/sitemap',
-    ['@nuxtjs/pwa', { icon: false }],
-    [
-      '@nuxtjs/google-analytics',
-      {
-        id: process.env.GOOGLE_ANALYTICS_ID,
-        debug: {
-          enabled: process.env.NODE_ENV === 'production',
-          trace: process.env.NODE_ENV === 'production',
-          sendHitTask: process.env.NODE_ENV === 'production'
-        }
-      }
-    ]
+    ['@nuxtjs/pwa', { icon: false }]
   ],
   markdownit: {
     injected: true,

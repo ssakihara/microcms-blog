@@ -180,6 +180,6 @@ export default {
     GOOGLE_SITE_VERIFICATION: process.env.GOOGLE_SITE_VERIFICATION || '',
     GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID || 'UA-XXXXXXX',
     TWITTER_URL: process.env.TWITTER_URL || '',
-    GITHUB_URL: process.env.GITHUB_URL | ''
+    GITHUB_URL: process.env.GITHUB_URL || ''
   }
 }

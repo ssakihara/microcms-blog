@@ -13,7 +13,7 @@
       </v-btn>
     </v-app-bar>
     <div v-if="$route.path === '/'" class="top-mv">
-      <h1 class="h1">{{ topTitle }}</h1>
+      <h1>{{ topTitle }}</h1>
       <v-btn class="btn" text to="/profile">簡易プロフィール</v-btn>
     </div>
     <v-content>
@@ -34,13 +34,17 @@
     </v-footer>
   </v-app>
 </template>
-<style>
-.header-title a {
-  color: black !important;
-  text-decoration: none !important;
+<style lang="scss">
+.header-title {
+  a {
+    color: black !important;
+    text-decoration: none !important;
+  }
 }
-.v-application code {
-  box-shadow: none !important;
+.v-application {
+  code {
+    box-shadow: none !important;
+  }
 }
 .footer {
   background-color: white;
@@ -54,16 +58,16 @@
   height: 400px;
   background-color: #2a3b48;
   text-align: center;
-}
-.top-mv .h1 {
-  position: relative;
-  top: 200px;
-  color: white;
-}
-.top-mv .btn {
-  position: relative;
-  top: 220px;
-  color: white;
+  h1 {
+    position: relative;
+    top: 200px;
+    color: white;
+  }
+  .btn {
+    position: relative;
+    top: 220px;
+    color: white;
+  }
 }
 </style>
 <script>

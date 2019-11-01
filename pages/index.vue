@@ -13,7 +13,7 @@
     </v-row>
   </v-container>
 </template>
-<style scoped>
+<style lang="scss" scoped>
 .text-end {
   text-align: right;
 }

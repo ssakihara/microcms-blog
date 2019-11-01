@@ -29,6 +29,7 @@ export default {
     const data = await microcms.get(
       `/api/v1/${process.env.MICROCMS_BLOG_ENDPOINT}?limit=1000`
     )
+    console.log(data.data)
     const contents = data.data.contents
     return { contents }
   },

@@ -34,6 +34,7 @@ export default {
     const data = await microcms.get(
       `/api/v1/${process.env.MICROCMS_BLOG_ENDPOINT}`
     )
+    console.log(data.data)
     const contents = data.data.contents
     for (let index = 0; index < contents.length; index++) {
       const content = contents[index]

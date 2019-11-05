@@ -42,12 +42,12 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.content.body
+          content: this.content.description
         },
         {
           hid: 'og:description',
           name: 'og:description',
-          content: this.content.body
+          content: this.content.description
         }
       ]
     }

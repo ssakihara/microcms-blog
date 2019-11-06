@@ -83,7 +83,7 @@ export default {
       title: process.env.APP_NAME,
       topTitle: process.env.APP_DESCRIPTION,
       gitHubLink: process.env.GITHUB_URL,
-      twitterLink: process.env.TWITTER_URL
+      twitterLink: `https://twitter.com/${process.env.TWITTER_USER}`
     }
   }
 }

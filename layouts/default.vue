@@ -17,20 +17,24 @@
       <v-btn class="btn" text to="/profile">簡易プロフィール</v-btn>
     </div>
     <v-content>
-      <v-row justify="center">
-        <v-col cols="12" md="6">
-          <nuxt />
-        </v-col>
-      </v-row>
+      <v-container>
+        <v-row justify="center">
+          <v-col cols="12" md="6">
+            <nuxt />
+          </v-col>
+        </v-row>
+      </v-container>
     </v-content>
     <v-footer padless>
-      <v-row class="footer" justify="center">
-        <v-col cols="12" md="6">
-          <p class="footer-inner">
-            Copyright © 2019 Shinnosuke All Rights Reserved.
-          </p>
-        </v-col>
-      </v-row>
+      <v-container>
+        <v-row class="footer" justify="center">
+          <v-col cols="12" md="6">
+            <p class="footer-inner">
+              Copyright © 2019 Shinnosuke All Rights Reserved.
+            </p>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-footer>
   </v-app>
 </template>

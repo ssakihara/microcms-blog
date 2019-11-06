@@ -14,7 +14,7 @@
     </v-app-bar>
     <div v-if="$route.path === '/'" class="top-mv">
       <h1>{{ topTitle }}</h1>
-      <v-btn class="btn" text to="/profile">簡易プロフィール</v-btn>
+      <v-btn class="top-mv__btn" text to="/profile">簡易プロフィール</v-btn>
     </div>
     <v-content>
       <v-container>
@@ -29,7 +29,7 @@
       <v-container>
         <v-row class="footer" justify="center">
           <v-col cols="12" md="6">
-            <p class="footer-inner">
+            <p class="footer__inner">
               Copyright © 2019 Shinnosuke All Rights Reserved.
             </p>
           </v-col>
@@ -53,11 +53,10 @@
   }
 }
 .footer {
-  background-color: white;
-}
-.footer-inner {
-  border-top: 1px solid black;
-  padding: 20px;
+  &__inner {
+    border-top: 1px solid black;
+    padding: 20px;
+  }
 }
 .top-mv {
   width: 100%;
@@ -69,7 +68,7 @@
     top: 200px;
     color: white;
   }
-  .btn {
+  &__btn {
     position: relative;
     top: 220px;
     color: white;

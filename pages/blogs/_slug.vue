@@ -48,6 +48,21 @@ export default {
           hid: 'og:description',
           name: 'og:description',
           content: this.content.description
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.content.img.url
+        },
+        {
+          hid: 'twitter:card',
+          property: 'twitter:card',
+          content: 'summary'
+        },
+        {
+          hid: 'twitter:site',
+          property: 'twitter:site',
+          content: `@${process.env.TWITTER_USER}`
         }
       ]
     }

@@ -158,7 +158,7 @@ export default {
     MICROCMS_PROFILE_ENDPOINT: process.env.MICROCMS_PROFILE_ENDPOINT || '',
     GOOGLE_SITE_VERIFICATION: process.env.GOOGLE_SITE_VERIFICATION || '',
     GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID || 'UA-XXXXXXX',
-    TWITTER_URL: process.env.TWITTER_URL || '',
+    TWITTER_USER: process.env.TWITTER_USER || '',
     GITHUB_URL: process.env.GITHUB_URL || ''
   }
 }

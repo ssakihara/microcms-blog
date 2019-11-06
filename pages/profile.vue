@@ -19,24 +19,25 @@ import microcms from '~/plugins/microcms'
 export default {
   head() {
     return {
-      title: 'プロフィール',
+      title: this.title,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: '簡易プロフィール'
+          content: this.description
         },
         {
           hid: 'og:description',
           name: 'og:description',
-          content: '簡易プロフィール'
+          content: this.description
         }
       ]
     }
   },
   data() {
     return {
-      title: 'プロフィール'
+      title: 'プロフィール',
+      description: '簡易プロフィール'
     }
   },
   async asyncData() {

@@ -1,5 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
-import axios from 'axios'
+import { fetchBlogRoutes } from './util/router'
 require('dotenv').config()
 
 export default {
@@ -63,43 +63,17 @@ export default {
     path: '/sitemap.xml',
     hostname: process.env.APP_URL,
     routes() {
-      return axios
-        .get(
-          `${process.env.MICROCMS_URL}/api/v1/${process.env.MICROCMS_BLOG_ENDPOINT}?fields=slug&limit=1000`,
-          {
-            headers: {
-              'X-API-KEY': process.env.MICROCMS_X_API_KEY
-            }
-          }
-        )
-        .then((res) => {
-          return res.data.contents.map((content) => {
-            return {
-              route: `${process.env.MICROCMS_BLOG_ENDPOINT}/${content.slug}`
-            }
-          })
-        })
+      return fetchBlogRoutes().then((routes) => {
+        return routes
+      })
     }
   },
   generate: {
     fallback: true,
     routes() {
-      return axios
-        .get(
-          `${process.env.MICROCMS_URL}/api/v1/${process.env.MICROCMS_BLOG_ENDPOINT}?fields=slug&limit=1000`,
-          {
-            headers: {
-              'X-API-KEY': process.env.MICROCMS_X_API_KEY
-            }
-          }
-        )
-        .then((res) => {
-          return res.data.contents.map((content) => {
-            return {
-              route: `${process.env.MICROCMS_BLOG_ENDPOINT}/${content.slug}`
-            }
-          })
-        })
+      return fetchBlogRoutes().then((routes) => {
+        return routes
+      })
     }
   },
   /*

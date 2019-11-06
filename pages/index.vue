@@ -4,18 +4,38 @@
       <v-col v-for="(content, i) in contents" :key="i" cols="12" md="4">
         <v-card :to="to(content.slug)" style="height:100%;">
           <v-img :src="`${content.img.url}?fit=crop&w=320&h=320`" />
-          <v-card-title>{{ content.title }}</v-card-title>
-          <v-card-text class="text-end">
+          <v-card-title class="py-0">{{ content.title }}</v-card-title>
+          <div class="tag-wrap">
+            <div v-for="(tag, j) in tags(content.tags)" :key="j" class="tag">
+              {{ tag }}
+            </div>
+          </div>
+          <div class="card-footer">
             更新日:{{ formatDate(content.updatedAt) }}
-          </v-card-text>
+          </div>
         </v-card>
       </v-col>
     </v-row>
   </v-container>
 </template>
 <style lang="scss" scoped>
-.text-end {
-  text-align: right;
+.tag-wrap {
+  padding: 10px 16px 60px 16px;
+}
+.tag {
+  margin: 0 10px 0 0;
+  padding: 0 5px;
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+  background-color: #f83;
+  border-radius: 5px;
+}
+.card-footer {
+  position: absolute;
+  padding: 10px;
+  bottom: 0;
+  right: 0;
 }
 </style>
 <script>
@@ -39,6 +59,12 @@ export default {
     },
     formatDate(date) {
       return moment.utc(date).format('Y/M/D')
+    },
+    tags(tags) {
+      if (/,/.test(tags)) {
+        return tags.split(',')
+      }
+      return [tags]
     }
   }
 }

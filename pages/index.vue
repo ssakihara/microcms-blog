@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col v-for="(content, i) in contents" :key="i" cols="12" md="4">
-        <v-card :to="to(content.slug)" style="height:100%;">
+        <v-card :to="to(content.id)" style="height:100%;">
           <v-img
             :src="`${content.img.url}?fit=crop&w=320&h=320`"
             alt="コンテンツ各種画像"
@@ -10,7 +10,7 @@
           <v-card-title class="py-0">{{ content.title }}</v-card-title>
           <div class="tag-wrap">
             <div v-for="(tag, j) in tags(content.tags)" :key="j" class="tag">
-              <strong> {{ tag }} </strong>
+              <strong>{{ tag }}</strong>
             </div>
           </div>
           <div class="card-footer">
@@ -57,8 +57,8 @@ export default {
     return { contents }
   },
   methods: {
-    to(slug) {
-      return `/${process.env.MICROCMS_BLOG_ENDPOINT}/${slug}`
+    to(id) {
+      return `/${process.env.MICROCMS_BLOG_ENDPOINT}/${id}`
     },
     formatDate(date) {
       return moment.utc(date).format('Y/M/D')

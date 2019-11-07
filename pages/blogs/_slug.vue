@@ -29,6 +29,19 @@
     padding: 30px 0px 0px 0px;
     border-bottom: 1px solid #ddd;
   }
+  h4 {
+    font-size: 19.2px;
+    margin: 42.24px 0 24px;
+    padding: 30px 0px 0px 0px;
+    border-bottom: 1px solid #ddd;
+  }
+  table,
+  td,
+  th {
+    border-collapse: collapse;
+    border: 1px solid #333;
+    padding: 5px;
+  }
 }
 </style>
 <script>

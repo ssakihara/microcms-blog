@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col v-for="(content, i) in contents" :key="i" cols="12" md="4">
-        <v-card :to="to(content.id)" style="height:100%;">
+        <v-card :to="to(content.id)" style="height: 100%;">
           <v-img
             :src="`${content.img.url}?fit=crop&w=320&h=320`"
             alt="コンテンツ各種画像"
@@ -25,6 +25,7 @@
 .tag-wrap {
   padding: 10px 16px 60px 16px;
 }
+
 .tag {
   margin: 0 10px 0 0;
   padding: 0 5px;
@@ -34,11 +35,13 @@
   background-color: #f83;
   border-radius: 5px;
 }
+
 .card-footer {
   position: absolute;
   padding: 10px;
   bottom: 0;
   right: 0;
+
   p {
     margin: 0;
   }

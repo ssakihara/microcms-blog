@@ -17,6 +17,7 @@
   padding: 10px 0;
   margin-bottom: 30px;
 }
+
 .tag {
   margin: 0 10px 0 0;
   padding: 0 5px;
@@ -26,36 +27,42 @@
   background-color: #f83;
   border-radius: 5px;
 }
+
 #page-title {
   font-size: 40px;
   margin: 0 0 16px;
-  padding: 0px;
+  padding: 0;
 }
+
 #active-content {
   h1 {
     font-size: 28.8px;
     margin: 63.36px 0 24px;
-    padding: 30px 0px 0px 0px;
+    padding: 30px 0 0 0;
     border-bottom: 1px solid #ddd;
   }
+
   h2 {
     font-size: 25.6px;
     margin: 63.36px 0 24px;
-    padding: 30px 0px 0px 0px;
+    padding: 30px 0 0 0;
     border-bottom: 1px solid #ddd;
   }
+
   h3 {
     font-size: 22.4px;
     margin: 49.28px 0 24px;
-    padding: 30px 0px 0px 0px;
+    padding: 30px 0 0 0;
     border-bottom: 1px solid #ddd;
   }
+
   h4 {
     font-size: 19.2px;
     margin: 42.24px 0 24px;
-    padding: 30px 0px 0px 0px;
+    padding: 30px 0 0 0;
     border-bottom: 1px solid #ddd;
   }
+
   table,
   td,
   th {

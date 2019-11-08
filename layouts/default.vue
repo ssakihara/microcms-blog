@@ -38,13 +38,6 @@
     </v-footer>
   </v-app>
 </template>
-<style lang="scss">
-.v-application {
-  code {
-    box-shadow: none !important;
-  }
-}
-</style>
 <style lang="scss" scoped>
 .header-title {
   a {
@@ -52,22 +45,26 @@
     text-decoration: none !important;
   }
 }
+
 .footer {
   &__inner {
     border-top: 1px solid black;
     padding: 20px;
   }
 }
+
 .top-mv {
   width: 100%;
   height: 400px;
   background-color: #2a3b48;
   text-align: center;
+
   h1 {
     position: relative;
     top: 200px;
     color: white;
   }
+
   &__btn {
     position: relative;
     top: 220px;

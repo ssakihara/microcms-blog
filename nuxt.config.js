@@ -50,7 +50,10 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@fortawesome/fontawesome-free/css/all.css'],
+  css: [
+    '@fortawesome/fontawesome-free/css/all.css',
+    { src: '~/assets/scss/common.scss', lang: 'scss' }
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -82,7 +85,8 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     ['@nuxtjs/eslint-module', { fix: true }],
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/stylelint-module'
   ],
   /*
    ** Nuxt.js modules
@@ -95,6 +99,9 @@ export default {
     '@nuxtjs/sitemap',
     ['@nuxtjs/pwa', { icon: false }]
   ],
+  stylelint: {
+    fix: true
+  },
   markdownit: {
     injected: true,
     breaks: true,
@@ -118,7 +125,7 @@ export default {
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+    customVariables: ['~/assets/scss/variables.scss'],
     theme: {
       dark: false,
       themes: {

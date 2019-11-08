@@ -14,7 +14,7 @@
             </div>
           </div>
           <div class="card-footer">
-            更新日:{{ formatDate(content.updatedAt) }}
+            <p>更新日:{{ date(content.updatedAt) }}</p>
           </div>
         </v-card>
       </v-col>
@@ -39,11 +39,14 @@
   padding: 10px;
   bottom: 0;
   right: 0;
+  p {
+    margin: 0;
+  }
 }
 </style>
 <script>
-import moment from 'moment-timezone'
 import microcms from '~/plugins/microcms'
+import { formatDate } from '~/util/date'
 export default {
   head() {
     return { titleTemplate: null, title: process.env.APP_NAME }
@@ -60,8 +63,8 @@ export default {
     to(id) {
       return `/${process.env.MICROCMS_BLOG_ENDPOINT}/${id}`
     },
-    formatDate(date) {
-      return moment.utc(date).format('Y/M/D')
+    date(date) {
+      return formatDate(date)
     },
     tags(tags) {
       if (/,/.test(tags)) {

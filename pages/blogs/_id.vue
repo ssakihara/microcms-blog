@@ -1,10 +1,31 @@
 <template>
   <v-container>
+    <div class="date">
+      <p>更新日:{{ date(content.updatedAt) }}</p>
+    </div>
     <h1 id="page-title">{{ content.title }}</h1>
+    <div class="tag-wrap">
+      <div v-for="(tag, j) in tags(content.tags)" :key="j" class="tag">
+        <strong>{{ tag }}</strong>
+      </div>
+    </div>
     <div id="active-content" v-html="$md.render(content.body)" />
   </v-container>
 </template>
 <style lang="scss">
+.tag-wrap {
+  padding: 10px 0;
+  margin-bottom: 30px;
+}
+.tag {
+  margin: 0 10px 0 0;
+  padding: 0 5px;
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+  background-color: #f83;
+  border-radius: 5px;
+}
 #page-title {
   font-size: 40px;
   margin: 0 0 16px;
@@ -47,6 +68,7 @@
 <script>
 import Prism from '~/plugins/prism'
 import microcms from '~/plugins/microcms'
+import { formatDate } from '~/util/date'
 export default {
   head() {
     return {
@@ -94,6 +116,17 @@ export default {
   },
   mounted() {
     Prism.highlightAll()
+  },
+  methods: {
+    date(date) {
+      return formatDate(date)
+    },
+    tags(tags) {
+      if (/,/.test(tags)) {
+        return tags.split(',')
+      }
+      return [tags]
+    }
   }
 }
 </script>

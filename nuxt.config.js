@@ -73,6 +73,7 @@ export default {
   },
   generate: {
     fallback: true,
+    subFolders: false,
     routes() {
       return fetchBlogRoutes().then((routes) => {
         return routes

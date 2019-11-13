@@ -5,8 +5,8 @@
     </div>
     <h1 id="page-title">{{ content.title }}</h1>
     <div class="tag-wrap">
-      <div v-for="(tag, j) in tags(content.tags)" :key="j" class="tag">
-        <strong>{{ tag }}</strong>
+      <div v-for="(tag, j) in content.tags" :key="j" class="tag">
+        <strong>{{ tag.name }}</strong>
       </div>
     </div>
     <div id="active-content" v-html="$md.render(content.body)" />
@@ -127,12 +127,6 @@ export default {
   methods: {
     date(date) {
       return formatDate(date)
-    },
-    tags(tags) {
-      if (/,/.test(tags)) {
-        return tags.split(',')
-      }
-      return [tags]
     }
   }
 }

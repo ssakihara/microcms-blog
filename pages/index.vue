@@ -9,8 +9,8 @@
           />
           <v-card-title class="py-0">{{ content.title }}</v-card-title>
           <div class="tag-wrap">
-            <div v-for="(tag, j) in tags(content.tags)" :key="j" class="tag">
-              <strong>{{ tag }}</strong>
+            <div v-for="(tag, j) in content.tags" :key="j" class="tag">
+              <strong>{{ tag.name }}</strong>
             </div>
           </div>
           <div class="card-footer">
@@ -68,12 +68,6 @@ export default {
     },
     date(date) {
       return formatDate(date)
-    },
-    tags(tags) {
-      if (/,/.test(tags)) {
-        return tags.split(',')
-      }
-      return [tags]
     }
   }
 }

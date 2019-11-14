@@ -67,7 +67,7 @@
   td,
   th {
     border-collapse: collapse;
-    border: 1px solid #333;
+    border: 1px solid $COLOR_MAIN;
     padding: 5px;
   }
 }

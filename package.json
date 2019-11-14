@@ -33,6 +33,7 @@
     "@nuxtjs/eslint-module": "^1.0.0",
     "@nuxtjs/markdownit": "^1.2.7",
     "@nuxtjs/sitemap": "^2.0.0",
+    "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/stylelint-module": "^3.0.1",
     "@nuxtjs/vuetify": "^1.0.0",
     "@vue/test-utils": "^1.0.0-beta.27",

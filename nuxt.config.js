@@ -52,7 +52,7 @@ export default {
    */
   css: [
     '@fortawesome/fontawesome-free/css/all.css',
-    { src: '~/assets/scss/common.scss', lang: 'scss' }
+    { src: '~/assets/scss/app.scss', lang: 'scss' }
   ],
   /*
    ** Plugins to load before mounting the App
@@ -97,9 +97,12 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/markdownit',
     '@nuxtjs/dotenv',
-    '@nuxtjs/sitemap',
+    '@nuxtjs/style-resources',
     ['@nuxtjs/pwa', { icon: false }]
   ],
+  styleResources: {
+    scss: ['./assets/scss/vars/*.scss']
+  },
   stylelint: {
     fix: true
   },

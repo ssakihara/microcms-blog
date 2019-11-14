@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar fixed app flat>
+    <v-app-bar fixed app flat extension-height="300">
       <v-toolbar-title class="header-title">
         <nuxt-link to="/" v-text="title" />
       </v-toolbar-title>
@@ -11,11 +11,15 @@
       <v-btn text :href="twitterLink" target="_blank">
         <v-icon>fab fa-twitter</v-icon>
       </v-btn>
+      <template v-if="$route.path === '/'" v-slot:extension>
+        <div class="top-mv pa-0">
+          <h1>{{ topTitle }}</h1>
+          <v-btn class="top-mv--btn" text to="/profile">
+            簡易プロフィール
+          </v-btn>
+        </div>
+      </template>
     </v-app-bar>
-    <div v-if="$route.path === '/'" class="top-mv">
-      <h1>{{ topTitle }}</h1>
-      <v-btn class="top-mv__btn" text to="/profile">簡易プロフィール</v-btn>
-    </div>
     <v-content>
       <v-container>
         <v-row justify="center">
@@ -41,34 +45,34 @@
 <style lang="scss" scoped>
 .header-title {
   a {
-    color: black !important;
+    color: $COLOR_MAIN;
     text-decoration: none !important;
   }
 }
 
 .footer {
   &__inner {
-    border-top: 1px solid black;
+    border-top: 1px solid $COLOR_MAIN;
     padding: 20px;
   }
 }
 
 .top-mv {
+  height: 300px;
   width: 100%;
-  height: 400px;
   background-color: #2a3b48;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
   h1 {
-    position: relative;
-    top: 200px;
     color: white;
   }
 
-  &__btn {
-    position: relative;
-    top: 220px;
+  &--btn {
     color: white;
+    text-align: center;
   }
 }
 </style>
@@ -80,6 +84,11 @@ export default {
       topTitle: process.env.APP_DESCRIPTION,
       gitHubLink: process.env.GITHUB_URL,
       twitterLink: `https://twitter.com/${process.env.TWITTER_USER}`
+    }
+  },
+  mounted() {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      this.$vuetify.theme.dark = true
     }
   }
 }

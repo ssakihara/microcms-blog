@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar fixed app flat extension-height="300">
+    <v-app-bar fixed app flat>
       <v-toolbar-title class="header-title">
         <nuxt-link to="/" v-text="title" />
       </v-toolbar-title>
@@ -11,15 +11,13 @@
       <v-btn text :href="twitterLink" target="_blank">
         <v-icon>fab fa-twitter</v-icon>
       </v-btn>
-      <template v-if="$route.path === '/'" v-slot:extension>
-        <div class="top-mv pa-0">
-          <h1>{{ topTitle }}</h1>
-          <v-btn class="top-mv--btn" text to="/profile">
-            簡易プロフィール
-          </v-btn>
-        </div>
-      </template>
     </v-app-bar>
+    <div class="top-mv pa-0">
+      <h1>{{ topTitle }}</h1>
+      <v-btn class="top-mv--btn" text to="/profile">
+        簡易プロフィール
+      </v-btn>
+    </div>
     <v-content>
       <v-container>
         <v-row justify="center">
@@ -63,11 +61,11 @@
   background-color: #2a3b48;
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
 
   h1 {
     color: white;
+    text-align: center;
   }
 
   &--btn {

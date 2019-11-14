@@ -1,0 +1,17 @@
+:root {
+  @media (prefers-color-scheme: light) {
+    --color-theme: red;
+    --color-base: white;
+    --color-main: black;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    --color-theme: #c00;
+    --color-base: black;
+    --color-main: white;
+  }
+}
+
+$COLOR_THEME: var(--color-theme);
+$COLOR_BASE: var(--color-base);
+$COLOR_MAIN: var(--color-main);

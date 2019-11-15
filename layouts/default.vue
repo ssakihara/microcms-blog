@@ -19,7 +19,7 @@
       </v-btn>
     </div>
     <v-content>
-      <v-container>
+      <v-container id="main">
         <v-row justify="center">
           <v-col cols="12" md="6">
             <nuxt />
@@ -48,44 +48,6 @@
     </v-footer>
   </v-app>
 </template>
-<style lang="scss" scoped>
-.header {
-  &__title {
-    color: $COLOR_MAIN;
-    text-decoration: none !important;
-  }
-}
-
-.footer {
-  &__notes {
-    margin: 5px 0 5px 0;
-  }
-
-  &__copyright {
-    border-top: 1px solid $COLOR_MAIN;
-    padding: 30px 0 30px 0;
-  }
-}
-
-.main-visual {
-  height: 300px;
-  width: 100%;
-  background-color: #2a3b48;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  &__title {
-    color: white;
-    text-align: center;
-  }
-
-  &__btn {
-    color: white;
-    text-align: center;
-  }
-}
-</style>
 <script>
 export default {
   data() {

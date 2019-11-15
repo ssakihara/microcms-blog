@@ -1,91 +1,18 @@
 <template>
-  <v-container>
-    <v-card class="card" flat>
-      <v-container class="card__inner">
-        <div class="date">
-          <p>更新日:{{ date(content.updatedAt) }}</p>
-        </div>
-        <h1 id="page-title">{{ content.title }}</h1>
-        <div class="tag-wrap">
-          <div v-for="(tag, j) in content.tags" :key="j" class="tag">
-            <strong>{{ tag.name }}</strong>
-          </div>
-        </div>
-        <div id="active-content" v-html="$md.render(content.body)" />
-      </v-container>
-    </v-card>
+  <v-container class="blogs">
+    <div class="date">
+      <p>更新日:{{ date(content.updatedAt) }}</p>
+    </div>
+    <h1 id="page-title">{{ content.title }}</h1>
+    <div class="tag-wrap">
+      <div v-for="(tag, j) in content.tags" :key="j" class="tag">
+        <strong>{{ tag.name }}</strong>
+      </div>
+    </div>
+    <div id="active-content" v-html="$md.render(content.body)" />
   </v-container>
 </template>
-<style lang="scss">
-.card {
-  &__inner {
-    padding: 20px;
-  }
-}
 
-.tag-wrap {
-  padding: 10px 0;
-  margin-bottom: 30px;
-}
-
-.tag {
-  margin: 0 10px 0 0;
-  padding: 0 5px;
-  display: inline-block;
-  text-align: center;
-  color: #fff;
-  background-color: #f83;
-  border-radius: 5px;
-}
-
-#page-title {
-  font-size: 40px;
-  margin: 0 0 16px;
-  padding: 0;
-}
-
-#active-content {
-  h1 {
-    font-size: 28.8px;
-    margin: 63.36px 0 24px;
-    padding: 30px 0 0 0;
-    border-bottom: 1px solid #ddd;
-  }
-
-  h2 {
-    font-size: 25.6px;
-    margin: 63.36px 0 24px;
-    padding: 30px 0 0 0;
-    border-bottom: 1px solid #ddd;
-  }
-
-  h3 {
-    font-size: 22.4px;
-    margin: 49.28px 0 24px;
-    padding: 30px 0 0 0;
-    border-bottom: 1px solid #ddd;
-  }
-
-  h4 {
-    font-size: 19.2px;
-    margin: 42.24px 0 24px;
-    padding: 30px 0 0 0;
-    border-bottom: 1px solid #ddd;
-  }
-
-  a {
-    padding: 0 5px 0 5px;
-  }
-
-  table,
-  td,
-  th {
-    border-collapse: collapse;
-    border: 1px solid $COLOR_MAIN;
-    padding: 5px;
-  }
-}
-</style>
 <script>
 import Prism from '~/plugins/prism'
 import microcms from '~/plugins/microcms'

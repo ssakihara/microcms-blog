@@ -1,18 +1,28 @@
 <template>
   <v-container>
-    <div class="date">
-      <p>更新日:{{ date(content.updatedAt) }}</p>
-    </div>
-    <h1 id="page-title">{{ content.title }}</h1>
-    <div class="tag-wrap">
-      <div v-for="(tag, j) in content.tags" :key="j" class="tag">
-        <strong>{{ tag.name }}</strong>
-      </div>
-    </div>
-    <div id="active-content" v-html="$md.render(content.body)" />
+    <v-card class="card" flat>
+      <v-container class="card__inner">
+        <div class="date">
+          <p>更新日:{{ date(content.updatedAt) }}</p>
+        </div>
+        <h1 id="page-title">{{ content.title }}</h1>
+        <div class="tag-wrap">
+          <div v-for="(tag, j) in content.tags" :key="j" class="tag">
+            <strong>{{ tag.name }}</strong>
+          </div>
+        </div>
+        <div id="active-content" v-html="$md.render(content.body)" />
+      </v-container>
+    </v-card>
   </v-container>
 </template>
 <style lang="scss">
+.card {
+  &__inner {
+    padding: 20px;
+  }
+}
+
 .tag-wrap {
   padding: 10px 0;
   margin-bottom: 30px;

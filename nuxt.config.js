@@ -97,6 +97,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/markdownit',
     '@nuxtjs/dotenv',
+    '@nuxtjs/sitemap',
     '@nuxtjs/style-resources',
     ['@nuxtjs/pwa', { icon: false }]
   ],

@@ -31,8 +31,8 @@
       <v-container>
         <v-row justify="center">
           <v-col cols="12" md="6">
-            <p>ご意見やご指摘はTwitterのDMにて対応</p>
-            <p>このサイトはダークモード対応</p>
+            <p>ご意見やご指摘はTwitterのDMにて対応します</p>
+            <p>本サイトはダークモードに対応しています</p>
           </v-col>
         </v-row>
         <v-row class="footer" justify="center">

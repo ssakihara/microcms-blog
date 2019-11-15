@@ -28,16 +28,18 @@
       </v-container>
     </v-content>
     <v-footer padless>
-      <v-container>
+      <v-container class="footer">
         <v-row justify="center">
           <v-col cols="12" md="6">
-            <p>ご意見やご指摘はTwitterのDMにて対応します</p>
-            <p>本サイトはダークモードに対応しています</p>
+            <p class="footer__notes">
+              ご意見やご指摘はTwitterのDMにて対応します
+            </p>
+            <p class="footer__notes">本サイトはダークモードに対応しています</p>
           </v-col>
         </v-row>
-        <v-row class="footer" justify="center">
+        <v-row justify="center">
           <v-col cols="12" md="6">
-            <p class="footer__inner">
+            <p class="footer__copyright">
               Copyright © 2019 Shinnosuke All Rights Reserved.
             </p>
           </v-col>
@@ -55,9 +57,13 @@
 }
 
 .footer {
-  &__inner {
+  &__notes {
+    margin: 5px 0 5px 0;
+  }
+
+  &__copyright {
     border-top: 1px solid $COLOR_MAIN;
-    padding: 20px;
+    padding: 30px 0 30px 0;
   }
 }
 

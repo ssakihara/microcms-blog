@@ -63,6 +63,10 @@
     border-bottom: 1px solid #ddd;
   }
 
+  a {
+    padding: 0 5px 0 5px;
+  }
+
   table,
   td,
   th {

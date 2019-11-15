@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="top">
     <v-row>
       <v-col v-for="(content, i) in contents" :key="i" cols="12" md="4">
         <v-card :to="to(content.id)" style="height: 100%;">
@@ -21,32 +21,6 @@
     </v-row>
   </v-container>
 </template>
-<style lang="scss" scoped>
-.tag-wrap {
-  padding: 10px 16px 60px 16px;
-}
-
-.tag {
-  margin: 0 10px 0 0;
-  padding: 0 5px;
-  display: inline-block;
-  text-align: center;
-  color: #fff;
-  background-color: #f83;
-  border-radius: 5px;
-}
-
-.card-footer {
-  position: absolute;
-  padding: 10px;
-  bottom: 0;
-  right: 0;
-
-  p {
-    margin: 0;
-  }
-}
-</style>
 <script>
 import microcms from '~/plugins/microcms'
 import { formatDate } from '~/util/date'

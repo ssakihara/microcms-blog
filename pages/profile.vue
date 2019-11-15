@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="profile">
     <h1>{{ title }}</h1>
     <v-simple-table>
       <tbody>

@@ -11,7 +11,8 @@
     "generate": "nuxt generate",
     "start-static": "http-server ./dist",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "test": "jest"
+    "test": "jest",
+    "update": "yarn upgrade --latest"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint"

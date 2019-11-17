@@ -99,6 +99,12 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/sitemap',
     '@nuxtjs/style-resources',
+    [
+      '@nuxtjs/google-adsense',
+      {
+        id: process.env.GOOGLE_ADSENSE_ID
+      }
+    ],
     ['@nuxtjs/pwa', { icon: false }]
   ],
   styleResources: {
@@ -170,6 +176,7 @@ export default {
     MICROCMS_PROFILE_ENDPOINT: process.env.MICROCMS_PROFILE_ENDPOINT || '',
     GOOGLE_SITE_VERIFICATION: process.env.GOOGLE_SITE_VERIFICATION || '',
     GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID || 'UA-XXXXXXX',
+    GOOGLE_ADSENSE_ID: process.env.GOOGLE_ADSENSE_ID || 'ca-pub-XXXXXXXXXXX',
     TWITTER_USER: process.env.TWITTER_USER || '',
     GITHUB_URL: process.env.GITHUB_URL || ''
   }

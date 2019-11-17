@@ -2,13 +2,13 @@
   <v-app>
     <v-app-bar fixed app flat>
       <v-toolbar-title class="header">
-        <nuxt-link to="/" class="header__title" v-text="title" />
+        <nuxt-link v-text="title" to="/" class="header__title" />
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn text :href="gitHubLink" target="_blank">
+      <v-btn :href="gitHubLink" text target="_blank">
         <v-icon>fab fa-github</v-icon>
       </v-btn>
-      <v-btn text :href="twitterLink" target="_blank">
+      <v-btn :href="twitterLink" text target="_blank">
         <v-icon>fab fa-twitter</v-icon>
       </v-btn>
     </v-app-bar>
@@ -21,8 +21,14 @@
     <v-content>
       <v-container id="main">
         <v-row justify="center">
+          <v-col cols="0" md="3">
+            <adsbygoogle />
+          </v-col>
           <v-col cols="12" md="6">
             <nuxt />
+          </v-col>
+          <v-col cols="0" md="3">
+            <adsbygoogle />
           </v-col>
         </v-row>
       </v-container>

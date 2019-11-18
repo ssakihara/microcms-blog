@@ -20,10 +20,8 @@
     </div>
     <v-content>
       <v-container id="main">
-        <v-row justify="center">
-          <v-col cols="0" md="3">
-            <adsbygoogle />
-          </v-col>
+        <v-row>
+          <v-col cols="0" md="3"> </v-col>
           <v-col cols="12" md="6">
             <nuxt />
           </v-col>

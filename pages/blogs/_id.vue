@@ -57,7 +57,7 @@ export default {
   },
   async asyncData({ params }) {
     const data = await microcms.get(
-      `/api/v1/${process.env.MICROCMS_BLOG_ENDPOINT}/${params.id}`
+      `${process.env.MICROCMS_BLOG_ENDPOINT}/${params.id}`
     )
     console.log(data.data)
     return { content: data.data }

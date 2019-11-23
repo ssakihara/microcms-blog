@@ -1,5 +1,14 @@
 <template>
   <v-container class="top">
+    <v-autocomplete
+      v-model="selectedTag"
+      :items="tags"
+      @change="search()"
+      label="Search tag"
+      filled
+      rounded
+      no-data-text="見つかりません"
+    ></v-autocomplete>
     <v-row>
       <v-col v-for="(content, i) in contents" :key="i" cols="12" md="4">
         <v-card :to="to(content.id)" style="height: 100%;">
@@ -28,13 +37,25 @@ export default {
   head() {
     return { titleTemplate: null, title: process.env.APP_NAME }
   },
+  data() {
+    return {
+      selectedTag: null
+    }
+  },
   async asyncData() {
-    const data = await microcms.get(
-      `/api/v1/${process.env.MICROCMS_BLOG_ENDPOINT}?limit=1000`
+    let data = await microcms.get(
+      `${process.env.MICROCMS_BLOG_ENDPOINT}?limit=1000`
     )
     console.log(data.data)
     const contents = data.data.contents
-    return { contents }
+
+    data = await microcms.get(
+      `${process.env.MICROCMS_TAGS_ENDPOINT}?limit=1000`
+    )
+    const tags = data.data.contents.map((tag) => {
+      return tag.name
+    })
+    return { contents, tags }
   },
   methods: {
     to(id) {
@@ -42,6 +63,12 @@ export default {
     },
     date(date) {
       return formatDate(date)
+    },
+    async search(tag) {
+      const data = await microcms.get(
+        `${process.env.MICROCMS_BLOG_ENDPOINT}?limit=1000&filters=tags[contains]${this.selectedTag}`
+      )
+      this.contents = data.data.contents
     }
   }
 }

@@ -8,7 +8,7 @@
 # install dependencies
 $ yarn install
 
-# serve with hot reload at localhost:3000
+# serve with hot reload at localhost:8000
 $ yarn dev
 
 # generate static project

@@ -1,4 +1,5 @@
 /* eslint-disable */
+require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: `Title`,
@@ -32,7 +33,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/example.png`
+        icon: `src/images/example.png`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -40,6 +41,14 @@ module.exports = {
     // `gatsby-plugin-offline`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-material-ui`,
+    {
+      resolve: 'gatsby-source-microcms',
+      options: {
+        apiKey: process.env.GATSBY_MICROCMS_X_API_KEY,
+        serviceId: process.env.GATSBY_MICROCMS_SERVICE_ID,
+        endpoint: process.env.GATSBY_MICROCMS_ENDPOINT,
+      },
+    },
   ],
 }
 /* eslint-enable */

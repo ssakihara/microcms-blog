@@ -5,6 +5,7 @@
  */
 
 // You can delete this file if you're not using it
+require('dotenv').config()
 const resolve = require('path').resolve
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({

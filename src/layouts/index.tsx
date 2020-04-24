@@ -29,6 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
   appBar: {
     [theme.breakpoints.up('sm')]: {
+      backgroundColor: '#00a65a',
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
     },
@@ -155,7 +156,7 @@ const App: React.FC<Props> = (props: Props) => {
         <div className={classes.toolbar} />
         {children}
       </main>
-      <AppBar position="fixed" color="primary" style={{ top: 'auto', bottom: 0 }}>
+      <AppBar position="fixed" style={{ top: 'auto', bottom: 0, backgroundColor: '#00a65a' }}>
         <Toolbar>
           <Grid container justify="center" alignItems="center">
             <Grid item>

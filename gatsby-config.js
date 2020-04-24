@@ -42,11 +42,9 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-material-ui`,
     {
-      resolve: 'gatsby-source-microcms',
+      resolve: 'gatsby-plugin-graphql-codegen',
       options: {
-        apiKey: process.env.GATSBY_MICROCMS_X_API_KEY,
-        serviceId: process.env.GATSBY_MICROCMS_SERVICE_ID,
-        endpoint: "content",
+        fileName: `types/graphql-types.d.ts`,
       },
     },
     {
@@ -54,7 +52,15 @@ module.exports = {
       options: {
         apiKey: process.env.GATSBY_MICROCMS_X_API_KEY,
         serviceId: process.env.GATSBY_MICROCMS_SERVICE_ID,
-        endpoint: "category",
+        endpoint: 'content',
+      },
+    },
+    {
+      resolve: 'gatsby-source-microcms',
+      options: {
+        apiKey: process.env.GATSBY_MICROCMS_X_API_KEY,
+        serviceId: process.env.GATSBY_MICROCMS_SERVICE_ID,
+        endpoint: 'category',
       },
     },
   ],

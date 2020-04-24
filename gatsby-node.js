@@ -6,12 +6,12 @@
 
 // You can delete this file if you're not using it
 require('dotenv').config()
-const resolve = require('path').resolve
+const path = require('path')
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
-        '@': resolve(__dirname, 'src'),
+        '@': path.resolve(__dirname, 'src'),
       },
     },
     module: {
@@ -27,5 +27,36 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         },
       ],
     },
+  })
+}
+
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
+  return new Promise(resolve => {
+    graphql(`
+      {
+        allMicrocmsContent {
+          edges {
+            node {
+              contentId
+            }
+          }
+        }
+      }
+    `).then(result => {
+      const template = path.resolve(`./src/templates/contents.tsx`)
+      result.data.allMicrocmsContent.edges.forEach(edge => {
+        const node = edge.node
+        const path = `/contents/${node.contentId}`
+        createPage({
+          path: path,
+          component: template,
+          context: {
+            contentId: node.contentId,
+          },
+        })
+      })
+      resolve()
+    })
   })
 }

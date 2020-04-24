@@ -3,6 +3,7 @@ import Layout from '@/layouts'
 import SEO from '@/components/seo'
 import { graphql } from 'gatsby'
 import { ContentsTemplateQuery } from 'types/graphql-types'
+import Render from '@/components/markdown-render'
 
 interface Props {
   children?: React.ReactNode
@@ -10,11 +11,13 @@ interface Props {
 }
 
 const App: React.FC<Props> = (props: Props) => {
+  const title: string = props.data.allMicrocmsContent.edges[0].node.title || ''
+  const description: string = props.data.allMicrocmsContent.edges[0].node.description || ''
   const body: string = props.data.allMicrocmsContent.edges[0].node.body || ''
   return (
     <Layout>
-      <SEO title="Content" />
-      <div dangerouslySetInnerHTML={{ __html: body }} />
+      <SEO title={title} description={description} />
+      <Render source={body} />
     </Layout>
   )
 }
@@ -27,6 +30,8 @@ export const query = graphql`
       edges {
         node {
           contentId
+          title
+          description
           body
         }
       }

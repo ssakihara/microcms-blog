@@ -4,6 +4,7 @@ import SEO from '@/components/seo'
 import { graphql } from 'gatsby'
 import { ContentsTemplateQuery } from 'types/graphql-types'
 import Render from '@/components/markdown-render'
+import Grid from '@material-ui/core/Grid'
 
 interface Props {
   children?: React.ReactNode
@@ -11,16 +12,18 @@ interface Props {
 }
 
 const App: React.FC<Props> = (props: Props) => {
-  const style: React.CSSProperties = { margin: 64 }
+  const style: React.CSSProperties = { marginBottom: 64 }
   const title: string = props.data.allMicrocmsContent.edges[0].node.title || ''
   const description: string = props.data.allMicrocmsContent.edges[0].node.description || ''
   const body: string = props.data.allMicrocmsContent.edges[0].node.body || ''
   return (
     <Layout>
       <SEO title={title} description={description} />
-      <div id="content" style={style}>
-        <Render source={body} />
-      </div>
+      <Grid container id="content" style={style} direction="row" justify="center" alignItems="center">
+        <Grid item>
+          <Render source={body} />
+        </Grid>
+      </Grid>
     </Layout>
   )
 }

@@ -1467,6 +1467,7 @@ export type MicrocmsContent = Node & {
   internal: Internal;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
+  categories?: Maybe<Array<Maybe<MicrocmsContentCategories>>>;
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   contentId?: Maybe<Scalars['String']>;
@@ -1487,6 +1488,40 @@ export type MicrocmsContentUpdatedAtArgs = {
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
+};
+
+export type MicrocmsContentCategories = {
+  id?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  name?: Maybe<Scalars['String']>;
+};
+
+
+export type MicrocmsContentCategoriesCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type MicrocmsContentCategoriesUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type MicrocmsContentCategoriesFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MicrocmsContentCategoriesFilterListInput = {
+  elemMatch?: Maybe<MicrocmsContentCategoriesFilterInput>;
 };
 
 export type MicrocmsContentConnection = {
@@ -1605,6 +1640,11 @@ export type MicrocmsContentFieldsEnum =
   'internal___type' |
   'createdAt' |
   'updatedAt' |
+  'categories' |
+  'categories___id' |
+  'categories___createdAt' |
+  'categories___updatedAt' |
+  'categories___name' |
   'title' |
   'description' |
   'contentId' |
@@ -1617,6 +1657,7 @@ export type MicrocmsContentFilterInput = {
   internal?: Maybe<InternalFilterInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  categories?: Maybe<MicrocmsContentCategoriesFilterListInput>;
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   contentId?: Maybe<StringQueryOperatorInput>;
@@ -1904,6 +1945,7 @@ export type QueryMicrocmsContentArgs = {
   internal?: Maybe<InternalFilterInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  categories?: Maybe<MicrocmsContentCategoriesFilterListInput>;
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   contentId?: Maybe<StringQueryOperatorInput>;

@@ -2,7 +2,7 @@
 require('dotenv').config()
 module.exports = {
   siteMetadata: {
-    title: `Title`,
+    title: `Shinnosuke Note`,
     description: `Description`,
     author: `@sshinnosuke0524`,
     lang: 'ja',

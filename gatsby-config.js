@@ -41,6 +41,7 @@ module.exports = {
     // `gatsby-plugin-offline`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-material-ui`,
+    `gatsby-plugin-sass`,
     {
       resolve: 'gatsby-plugin-graphql-codegen',
       options: {

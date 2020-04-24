@@ -14,6 +14,7 @@ import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import { useStaticQuery, Link, graphql } from 'gatsby'
+import '@/scss/layout.scss'
 
 const drawerWidth = 240
 
@@ -155,6 +156,7 @@ const App: React.FC<Props> = (props: Props) => {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         {children}
+        <div style={{ margin: 50 }}></div>
       </main>
       <AppBar position="fixed" style={{ top: 'auto', bottom: 0, backgroundColor: '#00a65a' }}>
         <Toolbar>

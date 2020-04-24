@@ -12,14 +12,13 @@ interface Props {
 }
 
 const App: React.FC<Props> = (props: Props) => {
-  const style: React.CSSProperties = { marginBottom: 64 }
   const title: string = props.data.allMicrocmsContent.edges[0].node.title || ''
   const description: string = props.data.allMicrocmsContent.edges[0].node.description || ''
   const body: string = props.data.allMicrocmsContent.edges[0].node.body || ''
   return (
     <Layout>
       <SEO title={title} description={description} />
-      <Grid container id="content" style={style} direction="row" justify="center" alignItems="center">
+      <Grid container id="content" direction="row" justify="center" alignItems="center">
         <Grid item>
           <Render source={body} />
         </Grid>

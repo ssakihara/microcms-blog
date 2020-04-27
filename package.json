@@ -9,6 +9,7 @@
     "@material-ui/icons": "^4.9.1",
     "@material-ui/styles": "^4.9.10",
     "@types/react-helmet": "^5.0.15",
+    "@types/react-syntax-highlighter": "^11.0.4",
     "gatsby": "^2.20.25",
     "gatsby-image": "^2.3.4",
     "gatsby-plugin-graphql-codegen": "^2.7.1",

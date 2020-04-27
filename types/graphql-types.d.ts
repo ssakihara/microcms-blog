@@ -2916,6 +2916,11 @@ export type Unnamed_2_QueryVariables = {};
 
 export type Unnamed_2_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
+export type IndexPageQueryVariables = {};
+
+
+export type IndexPageQuery = { allMicrocmsContent: { edges: Array<{ node: Pick<MicrocmsContent, 'title' | 'description'> }> } };
+
 export type ContentsTemplateQueryVariables = {
   contentId?: Maybe<Scalars['String']>;
 };

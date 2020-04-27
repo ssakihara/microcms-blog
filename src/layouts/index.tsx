@@ -13,7 +13,8 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
-import { useStaticQuery, Link, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
+import Link from '@/components/Link'
 import '@/scss/bootstrap.scss'
 import '@/scss/layout.scss'
 
@@ -49,14 +50,9 @@ const useStyles = makeStyles(theme => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: theme.spacing(0),
   },
 }))
-
-const LinkStyles: React.CSSProperties = {
-  color: 'inherit',
-  textDecoration: 'inherit',
-}
 
 interface Sidebar {
   to: string
@@ -116,9 +112,7 @@ const App: React.FC<Props> = (props: Props) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            <Link to="/" style={LinkStyles}>
-              {site.siteMetadata.title}
-            </Link>
+            <Link to="/">{site.siteMetadata.title}</Link>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -160,7 +154,7 @@ const App: React.FC<Props> = (props: Props) => {
         <Toolbar>
           <Grid container justify="center" alignItems="center">
             <Grid item>
-              <Typography>© 2020 Sakihara Shinnosuke.</Typography>
+              <Typography>© 2019 Sakihara Shinnosuke.</Typography>
             </Grid>
           </Grid>
         </Toolbar>

@@ -1,9 +1,9 @@
 import React from 'react'
 import Layout from '@/layouts'
-import SEO from '@/components/seo'
+import SEO from '@/components/Seo'
 import { graphql } from 'gatsby'
 import { ContentsTemplateQuery } from 'types/graphql-types'
-import Render from '@/components/markdown-render'
+import Render from '@/components/MarkdownRender'
 import Grid from '@material-ui/core/Grid'
 
 interface Props {

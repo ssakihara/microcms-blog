@@ -14,6 +14,7 @@ import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import { useStaticQuery, Link, graphql } from 'gatsby'
+import '@/scss/bootstrap.scss'
 import '@/scss/layout.scss'
 
 const drawerWidth = 240

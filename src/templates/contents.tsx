@@ -18,8 +18,9 @@ const App: React.FC<Props> = (props: Props) => {
   return (
     <Layout>
       <SEO title={title} description={description} />
-      <Grid container id="content" direction="row" justify="center" alignItems="center">
+      <Grid container className="content" direction="row" justify="center" alignItems="center">
         <Grid item>
+          <h1 className="title">{title}</h1>
           <Render source={body} />
         </Grid>
       </Grid>

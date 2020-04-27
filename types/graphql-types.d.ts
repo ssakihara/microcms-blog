@@ -2210,9 +2210,6 @@ export type SiteFieldsEnum =
   'siteMetadata___description' |
   'siteMetadata___author' |
   'siteMetadata___lang' |
-  'siteMetadata___sidebars' |
-  'siteMetadata___sidebars___to' |
-  'siteMetadata___sidebars___text' |
   'port' |
   'host' |
   'polyfill' |
@@ -2882,7 +2879,6 @@ export type SiteSiteMetadata = {
   description?: Maybe<Scalars['String']>;
   author?: Maybe<Scalars['String']>;
   lang?: Maybe<Scalars['String']>;
-  sidebars?: Maybe<Array<Maybe<SiteSiteMetadataSidebars>>>;
 };
 
 export type SiteSiteMetadataFilterInput = {
@@ -2890,21 +2886,6 @@ export type SiteSiteMetadataFilterInput = {
   description?: Maybe<StringQueryOperatorInput>;
   author?: Maybe<StringQueryOperatorInput>;
   lang?: Maybe<StringQueryOperatorInput>;
-  sidebars?: Maybe<SiteSiteMetadataSidebarsFilterListInput>;
-};
-
-export type SiteSiteMetadataSidebars = {
-  to?: Maybe<Scalars['String']>;
-  text?: Maybe<Scalars['String']>;
-};
-
-export type SiteSiteMetadataSidebarsFilterInput = {
-  to?: Maybe<StringQueryOperatorInput>;
-  text?: Maybe<StringQueryOperatorInput>;
-};
-
-export type SiteSiteMetadataSidebarsFilterListInput = {
-  elemMatch?: Maybe<SiteSiteMetadataSidebarsFilterInput>;
 };
 
 export type SiteSortInput = {
@@ -2933,10 +2914,7 @@ export type Unnamed_1_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSit
 export type Unnamed_2_QueryVariables = {};
 
 
-export type Unnamed_2_Query = { site?: Maybe<{ siteMetadata?: Maybe<(
-      Pick<SiteSiteMetadata, 'title'>
-      & { sidebars?: Maybe<Array<Maybe<Pick<SiteSiteMetadataSidebars, 'to' | 'text'>>>> }
-    )> }> };
+export type Unnamed_2_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 export type ContentsTemplateQueryVariables = {
   contentId?: Maybe<Scalars['String']>;

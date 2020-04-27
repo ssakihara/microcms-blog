@@ -6,12 +6,6 @@ module.exports = {
     description: `Description`,
     author: `@sshinnosuke0524`,
     lang: 'ja',
-    sidebars: [
-      {
-        to: '/home',
-        text: 'Home',
-      },
-    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

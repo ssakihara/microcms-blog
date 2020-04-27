@@ -1,23 +1,24 @@
 import React from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import Divider from '@material-ui/core/Divider'
-import Drawer from '@material-ui/core/Drawer'
-import Hidden from '@material-ui/core/Hidden'
+// import Divider from '@material-ui/core/Divider'
+// import Drawer from '@material-ui/core/Drawer'
+// import Hidden from '@material-ui/core/Hidden'
 import IconButton from '@material-ui/core/IconButton'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
+// import List from '@material-ui/core/List'
+// import ListItem from '@material-ui/core/ListItem'
+// import ListItemText from '@material-ui/core/ListItemText'
 import MenuIcon from '@material-ui/icons/Menu'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
-import { makeStyles, useTheme } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 import { useStaticQuery, Link, graphql } from 'gatsby'
 import '@/scss/bootstrap.scss'
 import '@/scss/layout.scss'
 
-const drawerWidth = 240
+// const drawerWidth = 240
+const drawerWidth = 0
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -72,10 +73,6 @@ const App: React.FC<Props> = (props: Props) => {
         site {
           siteMetadata {
             title
-            sidebars {
-              to
-              text
-            }
           }
         }
       }
@@ -83,26 +80,26 @@ const App: React.FC<Props> = (props: Props) => {
   )
   const { children } = props
   const classes = useStyles()
-  const theme = useTheme()
+  // const theme = useTheme()
   const [mobileOpen, setMobileOpen] = React.useState(false)
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen)
   }
 
-  const drawer = (
-    <div>
-      <div className={classes.toolbar} />
-      <Divider />
-      <List>
-        {site.siteMetadata.sidebars.map((sidebar: Sidebar) => (
-          <ListItem button key={sidebar.text} component={Link} to={sidebar.to}>
-            <ListItemText>{sidebar.text}</ListItemText>
-          </ListItem>
-        ))}
-      </List>
-    </div>
-  )
+  // const drawer = (
+  //   <div>
+  //     <div className={classes.toolbar} />
+  //     <Divider />
+  //     <List>
+  //       {site.siteMetadata.sidebars.map((sidebar: Sidebar) => (
+  //         <ListItem button key={sidebar.text} component={Link} to={sidebar.to}>
+  //           <ListItemText>{sidebar.text}</ListItemText>
+  //         </ListItem>
+  //       ))}
+  //     </List>
+  //   </div>
+  // )
 
   return (
     <div className={classes.root}>
@@ -125,7 +122,7 @@ const App: React.FC<Props> = (props: Props) => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <nav className={classes.drawer} aria-label="mailbox folders">
+      {/* <nav className={classes.drawer} aria-label="mailbox folders">
         <Hidden smUp implementation="css">
           <Drawer
             variant="temporary"
@@ -153,7 +150,7 @@ const App: React.FC<Props> = (props: Props) => {
             {drawer}
           </Drawer>
         </Hidden>
-      </nav>
+      </nav> */}
       <main className={classes.content}>
         <div className={classes.toolbar} />
         {children}

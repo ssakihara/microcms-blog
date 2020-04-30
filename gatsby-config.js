@@ -33,13 +33,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-typescript-starter`,
+        name: `sshinnosuke`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/example.png`,
+        icon: `src/images/sshinnosuke.png`,
       },
     },
     {

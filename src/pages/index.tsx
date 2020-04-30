@@ -13,7 +13,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { MicrocmsContent } from 'types/graphql-types'
 
 const useStyles = makeStyles({
-  root: {
+  card: {
     height: '100%',
   },
 })
@@ -25,6 +25,7 @@ const App: React.FC = () => {
         allMicrocmsContent {
           edges {
             node {
+              contentId
               title
               description
             }
@@ -37,11 +38,11 @@ const App: React.FC = () => {
   const classes = useStyles()
 
   const items = contents.allMicrocmsContent.edges.map(
-    (edge: { node: Pick<MicrocmsContent, 'title' | 'description'> }, index: number) => {
+    (edge: { node: Pick<MicrocmsContent, 'contentId' | 'title' | 'description'> }, index: number) => {
       return (
         <Grid item key={index} xs={12} sm={4}>
-          <Link to={'/home'}>
-            <Card variant="outlined" className={classes.root}>
+          <Link to={`/contents/${edge.node.contentId}`}>
+            <Card variant="outlined" className={classes.card}>
               <CardContent>
                 <Typography variant="h5" component="h2">
                   {edge.node.title}

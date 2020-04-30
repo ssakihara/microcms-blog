@@ -1470,8 +1470,8 @@ export type MicrocmsContent = Node & {
   categories?: Maybe<Array<Maybe<MicrocmsContentCategories>>>;
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
-  contentId?: Maybe<Scalars['String']>;
   body?: Maybe<Scalars['String']>;
+  contentId?: Maybe<Scalars['String']>;
 };
 
 
@@ -1647,8 +1647,8 @@ export type MicrocmsContentFieldsEnum =
   'categories___name' |
   'title' |
   'description' |
-  'contentId' |
-  'body';
+  'body' |
+  'contentId';
 
 export type MicrocmsContentFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -1660,8 +1660,8 @@ export type MicrocmsContentFilterInput = {
   categories?: Maybe<MicrocmsContentCategoriesFilterListInput>;
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
-  contentId?: Maybe<StringQueryOperatorInput>;
   body?: Maybe<StringQueryOperatorInput>;
+  contentId?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MicrocmsContentGroupConnection = {
@@ -1948,8 +1948,8 @@ export type QueryMicrocmsContentArgs = {
   categories?: Maybe<MicrocmsContentCategoriesFilterListInput>;
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
-  contentId?: Maybe<StringQueryOperatorInput>;
   body?: Maybe<StringQueryOperatorInput>;
+  contentId?: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -2919,14 +2919,14 @@ export type Unnamed_2_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSit
 export type IndexPageQueryVariables = {};
 
 
-export type IndexPageQuery = { allMicrocmsContent: { edges: Array<{ node: Pick<MicrocmsContent, 'title' | 'description'> }> } };
+export type IndexPageQuery = { allMicrocmsContent: { edges: Array<{ node: Pick<MicrocmsContent, 'contentId' | 'title' | 'description'> }> } };
 
 export type ContentsTemplateQueryVariables = {
   contentId?: Maybe<Scalars['String']>;
 };
 
 
-export type ContentsTemplateQuery = { allMicrocmsContent: { edges: Array<{ node: Pick<MicrocmsContent, 'contentId' | 'title' | 'description' | 'body'> }> } };
+export type ContentsTemplateQuery = { allMicrocmsContent: { edges: Array<{ node: Pick<MicrocmsContent, 'contentId' | 'title' | 'description' | 'body' | 'updatedAt'> }> } };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

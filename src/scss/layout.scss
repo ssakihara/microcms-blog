@@ -1,31 +1,50 @@
+@import 'bootstrap';
+
 .content {
   * {
     padding: 0;
     margin: 30px 0;
   }
+  h1,
+  h2,
+  h3,
+  h4 {
+    border-bottom: 1px solid #ddd;
+  }
 
   .title {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    @include pc {
+      font-size: 2rem;
+    }
   }
 
   h1 {
-    font-size: 1.8rem;
-    border-bottom: 1px solid #ddd;
+    font-size: 1.4rem;
+    @include pc {
+      font-size: 1.8rem;
+    }
   }
 
   h2 {
-    font-size: 1.5rem;
-    border-bottom: 1px solid #ddd;
+    font-size: 1.2rem;
+    @include pc {
+      font-size: 1.6rem;
+    }
   }
 
   h3 {
-    font-size: 1.2rem;
-    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+    @include pc {
+      font-size: 1.4rem;
+    }
   }
 
   h4 {
-    font-size: 0.9rem;
-    border-bottom: 1px solid #ddd;
+    font-size: 0.8rem;
+    @include pc {
+      font-size: 1.2rem;
+    }
   }
 
   a {
@@ -40,42 +59,12 @@
   table,
   td,
   th {
+    padding: 5px;
     border-collapse: collapse;
     border: 1px solid black;
   }
 
   p {
     margin: 0;
-  }
-}
-
-/**
-* スマホ用
-*/
-@media screen and (max-width: 480px) {
-  .content {
-    .title {
-      font-size: 1.6rem;
-    }
-
-    h1 {
-      font-size: 1.4rem;
-      border-bottom: 1px solid #ddd;
-    }
-
-    h2 {
-      font-size: 1.2rem;
-      border-bottom: 1px solid #ddd;
-    }
-
-    h3 {
-      font-size: 1rem;
-      border-bottom: 1px solid #ddd;
-    }
-
-    h4 {
-      font-size: 0.8rem;
-      border-bottom: 1px solid #ddd;
-    }
   }
 }

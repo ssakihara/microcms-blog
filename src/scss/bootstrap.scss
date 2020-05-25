@@ -1,3 +1,18 @@
+$tablet: 560px;
+$pc: 960px;
+
 * {
   overflow: scroll;
+}
+
+@mixin tablet {
+  @media (min-width: ($tablet)) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
 }

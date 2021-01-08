@@ -28,7 +28,7 @@ const App: React.FC<Props> = (prop) => {
                         <div className="emoji_inner w-6 h-6 text-5xl">{item.emoji}</div>
                       </div>
                       <div className="flex-1">
-                        <h1 className="break-all text-xl">{item.title}</h1>
+                        <h1 className="break-all text-lg font-bold md:text-xl">{item.title}</h1>
                         <div className="category pt-1">
                           <div className="category_inner flex">
                             {item.categories.map((category) => {

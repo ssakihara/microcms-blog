@@ -17,8 +17,8 @@ const App: React.FC<Props> = (prop) => {
       <NextSeo title={process.env.NEXT_PUBLIC_APP_NAME} description="" />
       <Main bg="bg-contents">
         <div className="flex pt-7">
-          <span className="mr-5 text-4xl">Category</span>
-          <span className="text-4xl">{prop.category.name}</span>
+          <span className="mr-2 text-3xl md:text-4xl">Category</span>
+          <span className="break-all text-3xl md:text-4xl">{prop.category.name}</span>
         </div>
         <div className="flex flex-wrap justify-between justify-center pt-7">
           {prop.contents.map((item) => {
@@ -31,14 +31,14 @@ const App: React.FC<Props> = (prop) => {
                         <div className="emoji_inner w-6 h-6 text-5xl">{item.emoji}</div>
                       </div>
                       <div className="flex-1">
-                        <h1 className="break-all text-xl">{item.title}</h1>
+                        <h1 className="break-all text-lg font-bold md:text-xl">{item.title}</h1>
                         <div className="category pt-1">
                           <div className="category_inner flex">
                             {item.categories.map((category) => {
                               return (
                                 <div className="mr-1 pb-0.5 pl-1 pr-1 pt-0.5 bg-white rounded-lg" key={category.id}>
                                   <Link href={`/categories/${category.id}`} key={item.id}>
-                                    {category.name}
+                                    <span>{category.name}</span>
                                   </Link>
                                 </div>
                               )

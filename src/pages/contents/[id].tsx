@@ -25,7 +25,7 @@ const App: React.FC<Props> = (props) => {
       />
       <Main bg="bg-contents">
         <div className="px-1 py-8">
-          <h1 className="mb-1 text-3xl">{props.content.title}</h1>
+          <h1 className="mb-1 text-2xl font-bold md:text-3xl">{props.content.title}</h1>
           <span className="text-gray-400">
             <i className="fas fa-sync-alt mr-1"></i>
             <span>{updatedAt}</span>

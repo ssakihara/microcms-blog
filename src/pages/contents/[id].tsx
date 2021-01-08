@@ -16,7 +16,7 @@ const App: React.FC<Props> = (props) => {
         title={`${props.content.title} | ${process.env.NEXT_PUBLIC_APP_NAME}`}
         description={`${props.content.description}`}
       />
-      <Main bg="bg-contents min-h-screen">
+      <Main bg="bg-contents">
         <h1 className="text-3xl py-8 px-1">{props.content.title}</h1>
         <div className="blogs pb-10">
           <Html html={props.content.body}></Html>

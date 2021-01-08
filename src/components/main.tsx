@@ -7,7 +7,7 @@ interface Props {
 const App: React.FC<Props> = (props) => {
   return (
     <>
-      <main className={props.bg}>
+      <main className={`${props.bg} min-h-screen`}>
         <div className="container mx-auto max-w-screen-lg">{props.children}</div>
       </main>
     </>

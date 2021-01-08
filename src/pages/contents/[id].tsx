@@ -17,7 +17,7 @@ const App: React.FC<Props> = (props) => {
         description={`${props.content.description}`}
       />
       <Main bg="bg-contents">
-        <h1 className="text-3xl py-8 px-1">{props.content.title}</h1>
+        <h1 className="px-1 py-8 text-3xl">{props.content.title}</h1>
         <div className="blogs pb-10">
           <Html html={props.content.body}></Html>
         </div>

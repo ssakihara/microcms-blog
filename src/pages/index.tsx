@@ -17,23 +17,23 @@ const App: React.FC<Props> = (prop) => {
         <div className="flex pt-7">
           <span className="text-4xl">Contents</span>
         </div>
-        <div className="flex justify-center pt-7 justify-between flex-wrap">
+        <div className="flex flex-wrap justify-between justify-center pt-7">
           {prop.contents.map((item) => {
             return (
               <Link href={`/contents/${item.id}`} key={item.id}>
-                <div className="card h-12 w-60 my-2 cursor-pointer">
+                <div className="card my-2 w-60 h-12 cursor-pointer">
                   <div className="card_wrapper container h-full">
                     <div className="card_inner flex">
-                      <div className="emoji h-12 w-12 flex flex-row justify-center items-center bg-white rounded-lg mr-3">
-                        <div className="emoji_inner text-5xl h-6 w-6">{item.emoji}</div>
+                      <div className="emoji flex flex-row items-center justify-center mr-3 w-12 h-12 bg-white rounded-lg">
+                        <div className="emoji_inner w-6 h-6 text-5xl">{item.emoji}</div>
                       </div>
                       <div className="flex-1">
-                        <h1 className="text-xl break-all">{item.title}</h1>
+                        <h1 className="break-all text-xl">{item.title}</h1>
                         <div className="category pt-1">
                           <div className="category_inner flex">
                             {item.categories.map((category) => {
                               return (
-                                <div className="bg-white rounded-lg pt-0.5 pb-0.5 pr-1 pl-1 mr-1" key={category.id}>
+                                <div className="mr-1 pb-0.5 pl-1 pr-1 pt-0.5 bg-white rounded-lg" key={category.id}>
                                   <Link href={`/categories/${category.id}`} key={item.id}>
                                     {category.name}
                                   </Link>

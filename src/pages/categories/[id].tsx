@@ -1,21 +1,25 @@
 import React from 'react'
-import { GetStaticProps } from 'next'
+import { GetStaticProps, GetStaticPaths } from 'next'
 import Link from 'next/link'
-import { Content } from '../types/content'
-import axios from '../plugins/microcms'
+import { Content } from '../../types/content'
+import { Category } from '../../types/category'
+import axios from '../../plugins/microcms'
 import { NextSeo } from 'next-seo'
-import Main from '../components/main'
+import Main from '../../components/main'
 
 interface Props {
+  category: Category
   contents: Content[]
 }
 const App: React.FC<Props> = (prop) => {
+  console.log(prop)
   return (
     <>
       <NextSeo title={process.env.NEXT_PUBLIC_APP_NAME} description="" />
       <Main bg="bg-top">
         <div className="flex pt-7">
-          <span className="text-4xl">Contents</span>
+          <span className="text-4xl mr-5">Category</span>
+          <span className="text-4xl">{prop.category.name}</span>
         </div>
         <div className="flex justify-center pt-7 justify-between flex-wrap">
           {prop.contents.map((item) => {
@@ -55,11 +59,31 @@ const App: React.FC<Props> = (prop) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const response = await axios.get('content?fields=id,emoji,title,categories.id,categories.name')
-  const props = response.data
+export const getStaticPaths: GetStaticPaths = async () => {
+  const response = await axios.get('category')
+  const paths = response.data.contents.map((params) => ({
+    params,
+  }))
   return {
-    props,
+    paths,
+    fallback: false,
+  }
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const id = context.params.id
+  const responseContent = await axios.get(
+    `content?fields=id,emoji,title,categories.id,categories.name&filters=categories[contains]${id}`
+  )
+  const contents = responseContent.data.contents
+
+  const responseCategory = await axios.get(`category/${id}?fields=name`)
+  const category = responseCategory.data
+  return {
+    props: {
+      contents,
+      category,
+    },
   }
 }
 

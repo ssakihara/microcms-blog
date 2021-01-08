@@ -1,74 +1,53 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import Layout from '@/layouts'
-import SEO from '@/components/Seo'
-import MainVisual from '@/components/MainVisual'
-import Grid from '@material-ui/core/Grid'
-import Card from '@material-ui/core/Card'
-import CardContent from '@material-ui/core/CardContent'
-import Typography from '@material-ui/core/Typography'
-import Container from '@material-ui/core/Container'
-import Link from '@/components/Link'
-import { useStaticQuery, graphql } from 'gatsby'
-import { MicrocmsContent } from 'types/graphql-types'
+import { GetStaticProps } from 'next'
+import Link from 'next/link'
+import { Content } from '../types/content'
+import axios from '../plugins/microcms'
+import { NextSeo } from 'next-seo'
+import Main from '../components/main'
 
-const useStyles = makeStyles({
-  card: {
-    height: '100%',
-  },
-})
-
-const App: React.FC = () => {
-  const contents = useStaticQuery(
-    graphql`
-      query IndexPage {
-        allMicrocmsContent {
-          edges {
-            node {
-              contentId
-              title
-              description
-            }
-          }
-        }
-      }
-    `
-  )
-
-  const classes = useStyles()
-
-  const items = contents.allMicrocmsContent.edges.map(
-    (edge: { node: Pick<MicrocmsContent, 'contentId' | 'title' | 'description'> }, index: number) => {
-      return (
-        <Grid item key={index} xs={12} sm={4}>
-          <Link to={`/contents/${edge.node.contentId}`}>
-            <Card variant="outlined" className={classes.card}>
-              <CardContent>
-                <Typography variant="h5" component="h2">
-                  {edge.node.title}
-                </Typography>
-                <Typography variant="body2" component="p">
-                  {edge.node.description}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Link>
-        </Grid>
-      )
-    }
-  )
-
+interface Props {
+  contents: Content[]
+}
+const App: React.FC<Props> = (prop) => {
   return (
-    <Layout>
-      <SEO title="Top" />
-      <MainVisual></MainVisual>
-      <Container>
-        <Grid container spacing={3}>
-          {items}
-        </Grid>
-      </Container>
-    </Layout>
+    <>
+      <NextSeo title={process.env.NEXT_PUBLIC_APP_NAME} description="" />
+      <Main bg="bg-top">
+        <div className="flex pt-7">
+          <span className="text-4xl">Contents</span>
+        </div>
+        <div className="flex justify-center pt-7 justify-between flex-wrap">
+          {prop.contents.map((item) => {
+            return (
+              <Link href={`/contents/${item.id}`} key={item.id}>
+                <div className="card h-12 w-60 my-2 cursor-pointer">
+                  <div className="card_wrapper container h-full">
+                    <div className="card_inner flex">
+                      <div className="emoji_wrapper h-12 w-12 flex flex-row justify-center items-center bg-white rounded-lg mr-3">
+                        <div className="emoji_inner text-5xl h-6 w-6">{item.emoji}</div>
+                      </div>
+                      <div className="flex-1">
+                        <h1 className="text-xl break-all">{item.title}</h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            )
+          })}
+        </div>
+      </Main>
+    </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await axios.get('content?fields=id,emoji,title')
+  const props = response.data
+  return {
+    props,
+  }
 }
 
 export default App

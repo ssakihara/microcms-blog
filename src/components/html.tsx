@@ -10,9 +10,21 @@ interface Props {
 const App: React.FC<Props> = (props) => {
   const $ = cheerio.load(props.html)
   $('pre code').each((_, elm) => {
-    const result = hljs.highlightAuto($(elm).text())
-    $(elm).html(result.value)
-    $(elm).addClass('hljs')
+    const text = $(elm).text()
+    if (/^file:(.*?)\n/.test($(elm).text())) {
+      const [_, name, text] = $(elm)
+        .text()
+        .match(/^file:(.*?)\n([\s\S]*)/)
+
+      const result = hljs.highlightAuto(text)
+      $(elm).html(result.value)
+      $(elm).addClass('hljs pt-10')
+      $(elm).before('<div class="file-name">' + name + '</div>\n')
+    } else {
+      const result = hljs.highlightAuto(text)
+      $(elm).html(result.value)
+      $(elm).addClass('hljs pt-10')
+    }
   })
 
   return (

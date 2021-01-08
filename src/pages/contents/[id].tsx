@@ -5,11 +5,18 @@ import { NextSeo } from 'next-seo'
 import { Content } from '../../types/content'
 import Main from '../../components/main'
 import Html from '../../components/html'
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+import timezone from 'dayjs/plugin/timezone'
 
 interface Props {
   content: Content
 }
 const App: React.FC<Props> = (props) => {
+  dayjs.extend(utc)
+  dayjs.extend(timezone)
+  dayjs.tz.setDefault('Asia/Tokyo')
+  const updatedAt = dayjs(props.content.updatedAt).format('YYYY/MM/DD HH:mm')
   return (
     <>
       <NextSeo
@@ -17,7 +24,13 @@ const App: React.FC<Props> = (props) => {
         description={`${props.content.description}`}
       />
       <Main bg="bg-contents">
-        <h1 className="px-1 py-8 text-3xl">{props.content.title}</h1>
+        <div className="px-1 py-8">
+          <h1 className="mb-1 text-3xl">{props.content.title}</h1>
+          <span className="text-gray-400">
+            <i className="fas fa-sync-alt mr-1"></i>
+            <span>{updatedAt}</span>
+          </span>
+        </div>
         <div className="blogs pb-10">
           <Html html={props.content.body}></Html>
         </div>

@@ -12,7 +12,6 @@ interface Props {
   contents: Content[]
 }
 const App: React.FC<Props> = (prop) => {
-  console.log(prop)
   return (
     <>
       <NextSeo title={process.env.NEXT_PUBLIC_APP_NAME} description="" />

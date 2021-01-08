@@ -12,14 +12,13 @@ const App: React.FC<Props> = (props) => {
   $('pre code').each((_, elm) => {
     const text = $(elm).text()
     if (/^file:(.*?)\n/.test($(elm).text())) {
-      const [_, name, text] = $(elm)
+      const [_, name, text] = $(elm) // eslint-disable-line @typescript-eslint/no-unused-vars
         .text()
         .match(/^file:(.*?)\n([\s\S]*)/)
 
       const result = hljs.highlightAuto(text)
-      $(elm).html(result.value)
+      $(elm).html('<span class="file-name">' + name + '</span>\n' + result.value)
       $(elm).addClass('hljs pt-10')
-      $(elm).before('<div class="file-name">' + name + '</div>\n')
     } else {
       const result = hljs.highlightAuto(text)
       $(elm).html(result.value)

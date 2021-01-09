@@ -2,6 +2,7 @@ import React from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import axios from '../../plugins/microcms'
 import { NextSeo } from 'next-seo'
+import Link from 'next/link'
 import { Content } from '../../types/content'
 import Main from '../../components/main'
 import Html from '../../components/html'
@@ -29,6 +30,13 @@ const App: React.FC<Props> = (props) => {
           <span className="text-gray-400">
             <i className="fas fa-sync-alt mr-1"></i>
             <span>{updatedAt}</span>
+            {props.content.tags.map((tag) => {
+              return (
+                <span className="ml-1 text-href" key={tag.id}>
+                  <Link href={`/tags/${tag.id}`}>{`#${tag.name}`}</Link>
+                </span>
+              )
+            })}
           </span>
         </div>
         <div className="blogs pb-10">

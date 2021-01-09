@@ -15,7 +15,7 @@ const App: React.FC<Props> = (prop) => {
   return (
     <>
       <NextSeo title={process.env.NEXT_PUBLIC_APP_NAME} description="" />
-      <Main bg="bg-contents">
+      <Main bg="bg-top">
         <div className="flex pt-7">
           <span className="mr-2 text-3xl md:text-4xl">Tag</span>
           <span className="break-all text-3xl md:text-4xl">{prop.tag.name}</span>

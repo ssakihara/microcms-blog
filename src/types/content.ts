@@ -1,7 +1,7 @@
-import { Category } from './category'
+import { Tag } from './tag'
 export interface Content {
   id: string
-  categories: Category[]
+  tags: Tag[]
   emoji: string
   title: string
   description: string

@@ -2,13 +2,13 @@ import React from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import Link from 'next/link'
 import { Content } from '../../types/content'
-import { Category } from '../../types/category'
+import { Tag } from '../../types/tag'
 import axios from '../../plugins/microcms'
 import { NextSeo } from 'next-seo'
 import Main from '../../components/main'
 
 interface Props {
-  category: Category
+  tag: Tag
   contents: Content[]
 }
 const App: React.FC<Props> = (prop) => {
@@ -17,8 +17,8 @@ const App: React.FC<Props> = (prop) => {
       <NextSeo title={process.env.NEXT_PUBLIC_APP_NAME} description="" />
       <Main bg="bg-contents">
         <div className="flex pt-7">
-          <span className="mr-2 text-3xl md:text-4xl">Category</span>
-          <span className="break-all text-3xl md:text-4xl">{prop.category.name}</span>
+          <span className="mr-2 text-3xl md:text-4xl">Tag</span>
+          <span className="break-all text-3xl md:text-4xl">{prop.tag.name}</span>
         </div>
         <div className="flex flex-wrap justify-between justify-center pt-7">
           {prop.contents.map((item) => {
@@ -32,13 +32,13 @@ const App: React.FC<Props> = (prop) => {
                       </div>
                       <div className="flex-1">
                         <h1 className="break-all text-lg font-bold md:text-xl">{item.title}</h1>
-                        <div className="category pt-1">
-                          <div className="category_inner flex">
-                            {item.categories.map((category) => {
+                        <div className="tag pt-1">
+                          <div className="tag_inner flex">
+                            {item.tags.map((tag) => {
                               return (
-                                <div className="mr-1 pb-0.5 pl-1 pr-1 pt-0.5 bg-white rounded-lg" key={category.id}>
-                                  <Link href={`/categories/${category.id}`} key={item.id}>
-                                    <span>{category.name}</span>
+                                <div className="mr-1 pb-0.5 pl-1 pr-1 pt-0.5 bg-white rounded-lg" key={tag.id}>
+                                  <Link href={`/tags/${tag.id}`} key={tag.id}>
+                                    <span>{tag.name}</span>
                                   </Link>
                                 </div>
                               )
@@ -59,7 +59,7 @@ const App: React.FC<Props> = (prop) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const response = await axios.get('category')
+  const response = await axios.get('tag')
   const paths = response.data.contents.map((params) => ({
     params,
   }))
@@ -71,17 +71,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = context.params.id
-  const responseContent = await axios.get(
-    `content?fields=id,emoji,title,categories.id,categories.name&filters=categories[contains]${id}`
-  )
+  const responseContent = await axios.get(`content?fields=id,emoji,title,tags.id,tags.name&filters=tags[contains]${id}`)
   const contents = responseContent.data.contents
 
-  const responseCategory = await axios.get(`category/${id}?fields=name`)
-  const category = responseCategory.data
+  const responseTag = await axios.get(`tag/${id}?fields=name`)
+  const tag = responseTag.data
   return {
     props: {
       contents,
-      category,
+      tag,
     },
   }
 }

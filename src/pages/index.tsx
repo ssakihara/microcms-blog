@@ -29,13 +29,13 @@ const App: React.FC<Props> = (prop) => {
                       </div>
                       <div className="flex-1">
                         <h1 className="break-all text-lg font-bold md:text-xl">{item.title}</h1>
-                        <div className="category pt-1">
-                          <div className="category_inner flex">
-                            {item.categories.map((category) => {
+                        <div className="tag pt-1">
+                          <div className="tag_inner flex">
+                            {item.tags.map((tag) => {
                               return (
-                                <div className="mr-1 pb-0.5 pl-1 pr-1 pt-0.5 bg-white rounded-lg" key={category.id}>
-                                  <Link href={`/categories/${category.id}`} key={item.id}>
-                                    {category.name}
+                                <div className="mr-1 pb-0.5 pl-1 pr-1 pt-0.5 bg-white rounded-lg" key={tag.id}>
+                                  <Link href={`/tags/${tag.id}`} key={item.id}>
+                                    {tag.name}
                                   </Link>
                                 </div>
                               )
@@ -56,7 +56,7 @@ const App: React.FC<Props> = (prop) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await axios.get('content?fields=id,emoji,title,categories.id,categories.name')
+  const response = await axios.get('content?fields=id,emoji,title,tags.id,tags.name')
   const props = response.data
   return {
     props,

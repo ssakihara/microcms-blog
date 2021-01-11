@@ -6,5 +6,6 @@ export interface Content {
   title: string
   description: string
   body: string
+  createdAt: string
   updatedAt: string
 }

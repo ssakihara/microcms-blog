@@ -46,7 +46,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = context.params.id
-  const responseContent = await axios.get(`content?fields=id,emoji,title,tags.id,tags.name&filters=tags[contains]${id}`)
+  const responseContent = await axios.get(
+    `content?fields=id,title,createdAt,tags.id,tags.name&filters=tags[contains]${id}`
+  )
   const contents = responseContent.data.contents
 
   const responseTag = await axios.get(`tag/${id}?fields=name`)

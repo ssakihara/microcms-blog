@@ -10,7 +10,7 @@ import Card from '../components/card'
 interface Props {
   contents: Content[]
 }
-const App: React.FC<Props> = (prop) => {
+const App: React.FC<Props> = (props) => {
   return (
     <>
       <NextSeo title={process.env.NEXT_PUBLIC_APP_NAME} description="" />
@@ -19,7 +19,7 @@ const App: React.FC<Props> = (prop) => {
           <span className="text-4xl">Contents</span>
         </div>
         <div className="flex flex-wrap justify-between justify-center pt-7">
-          {prop.contents.map((content) => {
+          {props.contents.map((content) => {
             return <Card content={content} key={content.id}></Card>
           })}
         </div>

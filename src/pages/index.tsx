@@ -12,7 +12,7 @@ interface Props {
 const App: React.FC<Props> = (props) => {
   return (
     <>
-      <NextSeo title={process.env.NEXT_PUBLIC_APP_NAME} description="" />
+      <NextSeo title={process.env.NEXT_PUBLIC_APP_NAME} description={process.env.NEXT_PUBLIC_APP_DESCRIPTION} />
       <Main bg="bg-top">
         <div className="flex pt-7">
           <span className="text-4xl">Contents</span>

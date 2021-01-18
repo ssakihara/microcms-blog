@@ -48,7 +48,8 @@ const App: React.FC<Props> = (props) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const response = await axios.get('content')
+  const limit = 10000
+  const response = await axios.get(`content?limit=${limit}`)
   const paths = response.data.contents.map((params) => ({
     params,
   }))

@@ -14,3 +14,7 @@ $ yarn dev
 # generate static project
 $ yarn build
 ```
+
+
+## Debug
+https://nextjs.org/docs/advanced-features/debugging

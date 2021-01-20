@@ -1,4 +1,4 @@
-import { Tag } from './tag'
+import { Tag } from '@/types/tag'
 export interface Content {
   id: string
   tags: Tag[]

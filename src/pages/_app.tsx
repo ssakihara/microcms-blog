@@ -8,8 +8,8 @@ import React from 'react'
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import Layout from '../components/layout'
-import * as gtag from '../plugins/gtag'
+import Layout from '@/layouts/main'
+import * as gtag from '@/plugins/gtag'
 
 const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   const router = useRouter()

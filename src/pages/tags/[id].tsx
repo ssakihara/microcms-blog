@@ -1,11 +1,11 @@
 import React from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
-import { Content } from '../../types/content'
-import { Tag } from '../../types/tag'
-import axios from '../../plugins/microcms'
+import { Content } from '@/types/content'
+import { Tag } from '@/types/tag'
+import axios from '@/plugins/microcms'
 import { NextSeo } from 'next-seo'
-import Main from '../../components/main'
-import Card from '../../components/card'
+import Main from '@/components/main'
+import Card from '@/components/card'
 
 interface Props {
   tag: Tag

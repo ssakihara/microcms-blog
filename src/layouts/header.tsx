@@ -1,10 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-interface Props {
-  children: React.ReactNode
-}
 
-const App: React.FC<Props> = (props) => {
+const App: React.FC = () => {
   return (
     <>
       <header className="header h-8">
@@ -18,8 +15,6 @@ const App: React.FC<Props> = (props) => {
           </div>
         </div>
       </header>
-      {props.children}
-      {/* <footer>footer</footer> */}
     </>
   )
 }

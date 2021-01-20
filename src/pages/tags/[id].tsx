@@ -18,12 +18,12 @@ const App: React.FC<Props> = (props) => {
         title={`Tag ${props.tag.name} | ${process.env.NEXT_PUBLIC_APP_NAME}`}
         description={`Tag ${props.tag.name}`}
       />
-      <Main bg="bg-top">
+      <Main class="bg-top">
         <div className="flex pt-7">
           <span className="mr-2 text-3xl md:text-4xl">Tag</span>
           <span className="break-all text-3xl md:text-4xl">{props.tag.name}</span>
         </div>
-        <div className="flex flex-wrap justify-between justify-center pt-7">
+        <div className="flex flex-wrap justify-between pt-7">
           {props.contents.map((content) => {
             return <Card content={content} key={content.id}></Card>
           })}

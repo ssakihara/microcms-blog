@@ -1,13 +1,13 @@
 import React from 'react'
 interface Props {
   children: React.ReactNode
-  bg: string
+  class: string
 }
 
 const App: React.FC<Props> = (props) => {
   return (
     <>
-      <main className={`${props.bg} min-h-screen`}>
+      <main className={`${props.class} min-h-screen`}>
         <div className="container mx-auto max-w-screen-lg">{props.children}</div>
       </main>
     </>

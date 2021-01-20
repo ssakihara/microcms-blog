@@ -39,7 +39,7 @@ const App: React.FC<Props> = (props) => {
             })}
           </span>
         </div>
-        <div className="blogs pb-10">
+        <div className="pb-10">
           <Html html={props.content.body}></Html>
         </div>
       </Main>

@@ -1,0 +1,29 @@
+/* src/pages/contents/[id].tsx */
+.html {
+  @apply p-3 bg-white rounded-lg md:p-8;
+}
+.html * {
+  @apply break-all;
+}
+.html h1 {
+  @apply my-2 py-1 text-2xl font-bold border border-l-0 border-r-0 border-t-0 md:text-3xl;
+}
+.html h2 {
+  @apply my-2 py-1 text-xl font-bold border border-l-0 border-r-0 border-t-0 md:text-2xl;
+}
+.html h3 {
+  @apply my-2 py-1 text-lg font-bold border border-l-0 border-r-0 border-t-0 md:text-xl;
+}
+.html ul {
+  @apply list-inside list-disc;
+}
+.html a {
+  @apply text-href;
+}
+.html pre code {
+  @apply pt-0;
+}
+.html pre code .file-name {
+  @apply mb-1 px-0 text-white text-base font-normal bg-gray-600;
+}
+/* src/pages/contents/[id].tsx */

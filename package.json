@@ -53,7 +53,7 @@
   },
   "engines": {
     "npm": "Please use yarn.",
-    "node": "14.x"
+    "node": "12.x"
   },
   "husky": {
     "hooks": {

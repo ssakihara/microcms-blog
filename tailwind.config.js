@@ -13,19 +13,19 @@ module.exports = {
     }),
     extend: {
       spacing: {
-        ...[...Array(121)].reduce((m, _, i) => {
+        ...[...Array(61)].reduce((m, _, i) => {
           m[`${i}`] = i / 2 + 'rem'
           return m
         }, {}),
       },
       width: {
-        ...[...Array(121)].reduce((m, _, i) => {
+        ...[...Array(61)].reduce((m, _, i) => {
           m[`${i}`] = i / 2 + 'rem'
           return m
         }, {}),
       },
       height: {
-        ...[...Array(121)].reduce((m, _, i) => {
+        ...[...Array(61)].reduce((m, _, i) => {
           m[`${i}`] = i / 2 + 'rem'
           return m
         }, {}),

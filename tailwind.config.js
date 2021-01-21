@@ -11,6 +11,9 @@ module.exports = {
       ...theme('colors'),
       href: '#0f83fd',
     }),
+    minHeight: {
+      main: 'calc(100vh - 8rem)', // ヘッダーとフッター分を小さく
+    },
     extend: {
       spacing: {
         ...[...Array(61)].reduce((m, _, i) => {

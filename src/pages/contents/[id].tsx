@@ -1,6 +1,6 @@
 import React from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
-import axios from '@/plugins/microcms'
+import { getContents, Response } from '@/plugins/microcms'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 import { Content } from '@/types/content'
@@ -47,9 +47,11 @@ const App: React.FC<Props> = (props) => {
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths<any> = async () => {
   const limit = 10000
-  const response = await axios.get(`content?limit=${limit}`)
+  const response = await getContents<Response<Content[]>>('content', {
+    limit,
+  })
   const paths = response.data.contents.map((params) => ({
     params,
   }))
@@ -60,7 +62,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = context.params.id
-  const response = await axios.get(`content/${id}`)
+  const response = await getContents<Content>(`content/${id}`)
   const content = response.data
   return {
     props: {

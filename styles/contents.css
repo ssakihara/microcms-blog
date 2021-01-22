@@ -6,24 +6,30 @@
   @apply break-all;
 }
 .html h1 {
-  @apply my-2 py-1 text-2xl font-bold border border-l-0 border-r-0 border-t-0 md:text-3xl;
+  @apply my-2 py-1 text-xl font-bold border border-l-0 border-r-0 border-t-0 md:text-3xl;
 }
 .html h2 {
-  @apply my-2 py-1 text-xl font-bold border border-l-0 border-r-0 border-t-0 md:text-2xl;
+  @apply my-2 py-1 text-lg font-bold border border-l-0 border-r-0 border-t-0 md:text-2xl;
 }
 .html h3 {
-  @apply my-2 py-1 text-lg font-bold border border-l-0 border-r-0 border-t-0 md:text-xl;
+  @apply my-2 py-1 text-base font-bold border border-l-0 border-r-0 border-t-0 md:text-xl;
+}
+.html p {
+  @apply text-sm md:text-base;
 }
 .html ul {
-  @apply list-inside list-disc;
+  @apply text-sm list-inside list-disc md:text-base;
 }
 .html a {
   @apply text-href;
+}
+.html pre * {
+  @apply text-sm md:text-base;
 }
 .html pre code {
   @apply p-0;
 }
 .html pre code .filename_text {
-  @apply px-1 text-white text-base font-normal bg-gray-600 rounded-br-lg;
+  @apply px-1 text-white text-sm font-normal bg-gray-600 rounded-br-lg md:text-base;
 }
 /* src/pages/contents/[id].tsx */

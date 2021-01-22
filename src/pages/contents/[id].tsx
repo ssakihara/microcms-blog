@@ -1,14 +1,14 @@
-import React from 'react'
+import Html from '@/components/html'
+import Main from '@/components/main'
+import { getContent, getContents } from '@/plugins/microcms'
+import { Content } from '@/types/microcms'
+import dayjs from 'dayjs'
+import timezone from 'dayjs/plugin/timezone'
+import utc from 'dayjs/plugin/utc'
 import { GetStaticProps, GetStaticPaths } from 'next'
-import { getContents, Response } from '@/plugins/microcms'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
-import { Content } from '@/types/content'
-import Main from '@/components/main'
-import Html from '@/components/html'
-import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc'
-import timezone from 'dayjs/plugin/timezone'
+import React from 'react'
 
 interface Props {
   content: Content
@@ -49,7 +49,7 @@ const App: React.FC<Props> = (props) => {
 
 export const getStaticPaths: GetStaticPaths<any> = async () => {
   const limit = 10000
-  const response = await getContents<Response<Content[]>>('content', {
+  const response = await getContents<Content>('content', {
     limit,
   })
   const paths = response.data.contents.map((params) => ({
@@ -62,7 +62,7 @@ export const getStaticPaths: GetStaticPaths<any> = async () => {
 }
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = context.params.id
-  const response = await getContents<Content>(`content/${id}`)
+  const response = await getContent<Content>(`content/${id}`)
   const content = response.data
   return {
     props: {

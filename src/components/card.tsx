@@ -1,10 +1,10 @@
-import React from 'react'
-import Link from 'next/link'
-import { Content } from '../types/content'
-import emoji from 'node-emoji/lib/emoji.json'
+import { Content } from '@/types/microcms'
 import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
+import utc from 'dayjs/plugin/utc'
+import Link from 'next/link'
+import emoji from 'node-emoji/lib/emoji.json'
+import React from 'react'
 
 interface Props {
   content: Content

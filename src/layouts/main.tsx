@@ -1,6 +1,6 @@
-import React from 'react'
-import Header from '@/layouts/header'
 import Footer from '@/layouts/footer'
+import Header from '@/layouts/header'
+import React from 'react'
 
 interface Props {
   children: React.ReactNode

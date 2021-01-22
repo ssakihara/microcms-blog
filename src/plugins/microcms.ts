@@ -13,7 +13,7 @@ interface Request {
   depth?: string
 }
 export interface Response<T> {
-  contents: T
+  contents: T[]
   totalCount: number
   offset: number
   limit: number
@@ -26,8 +26,12 @@ const microcms = axios.create({
   },
 })
 
-const getContents = <T>(url: string, params?: Request): Promise<AxiosResponse<T>> => {
+const getContent = <T>(url: string, params?: Request): Promise<AxiosResponse<T>> => {
   return microcms.get(url, { params })
 }
 
-export { microcms, getContents }
+const getContents = <T>(url: string, params?: Request): Promise<AxiosResponse<Response<T>>> => {
+  return microcms.get(url, { params })
+}
+
+export { microcms, getContent, getContents }

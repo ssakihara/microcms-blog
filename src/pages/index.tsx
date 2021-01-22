@@ -1,11 +1,10 @@
-import React from 'react'
-import { GetStaticProps } from 'next'
-import { Content } from '@/types/content'
-import { getContents, Response } from '@/plugins/microcms'
-import { NextSeo } from 'next-seo'
-import Main from '@/components/main'
 import Card from '@/components/card'
-
+import Main from '@/components/main'
+import { getContents } from '@/plugins/microcms'
+import { Content } from '@/types/microcms'
+import { GetStaticProps } from 'next'
+import { NextSeo } from 'next-seo'
+import React from 'react'
 interface Props {
   contents: Content[]
 }
@@ -28,7 +27,7 @@ const App: React.FC<Props> = (props) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await getContents<Response<Content[]>>('content', {
+  const response = await getContents<Content>('content', {
     fields: 'id,title,createdAt,tags.id,tags.name',
   })
   const props = response.data

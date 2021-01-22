@@ -5,12 +5,12 @@ import '@fortawesome/fontawesome-free/js/regular'
 import '../../styles/tailwind.css'
 import '../../styles/app.css'
 import '../../styles/tailwind-util.css'
-import React from 'react'
-import { AppProps } from 'next/app'
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
 import Layout from '@/layouts/main'
 import * as gtag from '@/plugins/gtag'
+import { AppProps } from 'next/app'
+import { useRouter } from 'next/router'
+import React from 'react'
+import { useEffect } from 'react'
 
 const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   const router = useRouter()

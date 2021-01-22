@@ -1,11 +1,10 @@
-import React from 'react'
-import { GetStaticProps, GetStaticPaths } from 'next'
-import { Content } from '@/types/content'
-import { Tag } from '@/types/tag'
-import { getContents, Response } from '@/plugins/microcms'
-import { NextSeo } from 'next-seo'
-import Main from '@/components/main'
 import Card from '@/components/card'
+import Main from '@/components/main'
+import { getContent, getContents } from '@/plugins/microcms'
+import { Content, Tag } from '@/types/microcms'
+import { GetStaticProps, GetStaticPaths } from 'next'
+import { NextSeo } from 'next-seo'
+import React from 'react'
 
 interface Props {
   tag: Tag
@@ -35,7 +34,7 @@ const App: React.FC<Props> = (props) => {
 
 export const getStaticPaths: GetStaticPaths<any> = async () => {
   const limit = 10000
-  const response = await getContents<Response<Tag[]>>('tag', {
+  const response = await getContents<Tag>('tag', {
     fields: 'id',
     limit,
   })
@@ -50,13 +49,13 @@ export const getStaticPaths: GetStaticPaths<any> = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = context.params.id
-  const responseContent = await getContents<Response<Content[]>>('content', {
+  const responseContent = await getContents<Content>('content', {
     fields: 'id,title,createdAt,tags.id,tags.name',
     filters: `tags[contains]${id}`,
   })
   const contents = responseContent.data.contents
 
-  const responseTag = await getContents<Tag>(`tag/${id}`, {
+  const responseTag = await getContent<Tag>(`tag/${id}`, {
     fields: 'name',
   })
   const tag = responseTag.data

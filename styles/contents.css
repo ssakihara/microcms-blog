@@ -21,9 +21,9 @@
   @apply text-href;
 }
 .html pre code {
-  @apply pt-0;
+  @apply p-0;
 }
-.html pre code .file-name {
-  @apply mb-1 px-0 text-white text-base font-normal bg-gray-600;
+.html pre code .filename_text {
+  @apply px-1 text-white text-base font-normal bg-gray-600 rounded-br-lg;
 }
 /* src/pages/contents/[id].tsx */

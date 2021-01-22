@@ -18,15 +18,15 @@ const App: React.FC<Props> = (props) => {
         .match(/^file:(.*?)\n([\s\S]*)/)
 
       const result = hljs.highlightAuto(text)
-      $(elm).html(
-        `<span class="file-name">${name}</span>\n<div class="js-copy-${i}" onClick="${onClick}">${result.value}</div>`
-      )
-      $(elm).addClass('hljs pt-10 cursor-pointer')
+      const filenameTextClass = `<div class="filename_text">${name}</div>`
+      const flexClass = `<div class="flex">${filenameTextClass}</div>`
+      const filenameContainerClass = `<div class="filename container mx-auto">${flexClass}</div>`
+      $(elm).html(`${filenameContainerClass}<div class="js-copy-${i} p-2" onClick="${onClick}">${result.value}</div>`)
     } else {
       const result = hljs.highlightAuto(text)
-      $(elm).html(`<div class="js-copy-${i}" onClick="${onClick}">${result.value}</div>`)
-      $(elm).addClass('hljs pt-10 cursor-pointer')
+      $(elm).html(`<div class="js-copy-${i} p-2" onClick="${onClick}">${result.value}</div>`)
     }
+    $(elm).addClass('hljs cursor-pointer')
   })
 
   return (

@@ -18,7 +18,11 @@ const App: React.FC<Props> = (props) => {
         </div>
         <div className="flex flex-wrap justify-between pt-7">
           {props.contents.map((content) => {
-            return <Card content={content} key={content.id}></Card>
+            return (
+              <div className="my-2" key={content.id}>
+                <Card content={content}></Card>
+              </div>
+            )
           })}
         </div>
       </Main>

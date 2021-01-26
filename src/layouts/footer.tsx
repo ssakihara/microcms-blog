@@ -11,7 +11,7 @@ const App: React.FC = () => {
   return (
     <>
       <footer className="container mx-auto px-1 h-8">
-        <div className="flex items-center h-full">
+        <div className="flex items-center justify-center h-full">
           <a href={process.env.NEXT_PUBLIC_TWITTER_URL} target="_blank" rel="noreferrer">
             <span>©️ {now} @ssakihara0524</span>
           </a>

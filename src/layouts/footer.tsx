@@ -1,12 +1,7 @@
-import dayjs from 'dayjs'
-import timezone from 'dayjs/plugin/timezone'
-import utc from 'dayjs/plugin/utc'
+import dayjs from '@/plugins/dayjs'
 import React from 'react'
 
 const App: React.FC = () => {
-  dayjs.extend(utc)
-  dayjs.extend(timezone)
-  dayjs.tz.setDefault('Asia/Tokyo')
   const now = dayjs().format('YYYY')
   return (
     <>

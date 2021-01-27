@@ -1,10 +1,8 @@
 import Html from '@/components/html'
 import Main from '@/components/main'
+import dayjs from '@/plugins/dayjs'
 import { getContent, getContents } from '@/plugins/microcms'
 import { Content } from '@/types/microcms'
-import dayjs from 'dayjs'
-import timezone from 'dayjs/plugin/timezone'
-import utc from 'dayjs/plugin/utc'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
@@ -14,9 +12,6 @@ interface Props {
   content: Content
 }
 const App: React.FC<Props> = (props) => {
-  dayjs.extend(utc)
-  dayjs.extend(timezone)
-  dayjs.tz.setDefault('Asia/Tokyo')
   const updatedAt = dayjs(props.content.updatedAt).format('YYYY/MM/DD HH:mm')
   return (
     <>

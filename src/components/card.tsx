@@ -1,7 +1,5 @@
+import dayjs from '@/plugins/dayjs'
 import { Content } from '@/types/microcms'
-import dayjs from 'dayjs'
-import timezone from 'dayjs/plugin/timezone'
-import utc from 'dayjs/plugin/utc'
 import Link from 'next/link'
 import emoji from 'node-emoji/lib/emoji.json'
 import React from 'react'
@@ -11,9 +9,6 @@ interface Props {
 }
 
 const App: React.FC<Props> = (props) => {
-  dayjs.extend(utc)
-  dayjs.extend(timezone)
-  dayjs.tz.setDefault('Asia/Tokyo')
   const createdAt = Number(dayjs(props.content.createdAt).format('YYYYMMDD'))
   const emojiArr = Object.entries(emoji).map(([key, emoji]) => ({ key: key, emoji: emoji }))
   const num = createdAt % emojiArr.length

@@ -2,7 +2,7 @@
 
 exports[`Card tag multiple 1`] = `
 <div
-  className="card w-60 h-12 cursor-pointer"
+  className="card h-12 cursor-pointer"
   onClick={[Function]}
   onMouseEnter={[Function]}
 >
@@ -63,7 +63,7 @@ exports[`Card tag multiple 1`] = `
 
 exports[`Card tag none 1`] = `
 <div
-  className="card w-60 h-12 cursor-pointer"
+  className="card h-12 cursor-pointer"
   onClick={[Function]}
   onMouseEnter={[Function]}
 >
@@ -101,7 +101,7 @@ exports[`Card tag none 1`] = `
 
 exports[`Card tag single 1`] = `
 <div
-  className="card w-60 h-12 cursor-pointer"
+  className="card h-12 cursor-pointer"
   onClick={[Function]}
   onMouseEnter={[Function]}
 >

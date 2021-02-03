@@ -11,9 +11,6 @@ module.exports = {
       ...theme('colors'),
       href: '#0f83fd',
     }),
-    minHeight: {
-      main: 'calc(100vh - 8rem)', // ヘッダーとフッター分を小さく
-    },
     extend: {
       spacing: {
         ...[...Array(61)].reduce((m, _, i) => {
@@ -28,6 +25,19 @@ module.exports = {
         }, {}),
       },
       height: {
+        ...[...Array(61)].reduce((m, _, i) => {
+          m[`${i}`] = i / 2 + 'rem'
+          return m
+        }, {}),
+      },
+      minHeight: {
+        ...[...Array(61)].reduce((m, _, i) => {
+          m[`${i}`] = i / 2 + 'rem'
+          return m
+        }, {}),
+        main: 'calc(100vh - 8rem)', // ヘッダーとフッター分を小さく
+      },
+      maxWidth: {
         ...[...Array(61)].reduce((m, _, i) => {
           m[`${i}`] = i / 2 + 'rem'
           return m

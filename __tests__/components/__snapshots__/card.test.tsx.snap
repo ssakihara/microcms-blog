@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card tag multiple 1`] = `
+<div
+  className="card w-60 h-12 cursor-pointer"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  <div
+    className="card_inner flex"
+  >
+    <div
+      className="emoji flex flex-row items-center justify-center mr-3 w-12 h-12 bg-white rounded-lg"
+    >
+      <div
+        className="emoji_inner w-6 h-6 text-5xl"
+      >
+        🎵
+      </div>
+    </div>
+    <div
+      className="text flex-1"
+    >
+      <h1
+        className="break-all text-lg font-bold md:text-xl"
+      >
+        Title Name
+      </h1>
+      <div
+        className="tag pt-1"
+      >
+        <div
+          className="tag_inner flex"
+        >
+          <div
+            className="mr-1 p-0 text-href"
+          >
+            <a
+              href="/tags/1"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              #Title Name
+            </a>
+          </div>
+          <div
+            className="mr-1 p-0 text-href"
+          >
+            <a
+              href="/tags/2"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              #Title Name
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card tag none 1`] = `
+<div
+  className="card w-60 h-12 cursor-pointer"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  <div
+    className="card_inner flex"
+  >
+    <div
+      className="emoji flex flex-row items-center justify-center mr-3 w-12 h-12 bg-white rounded-lg"
+    >
+      <div
+        className="emoji_inner w-6 h-6 text-5xl"
+      >
+        🎵
+      </div>
+    </div>
+    <div
+      className="text flex-1"
+    >
+      <h1
+        className="break-all text-lg font-bold md:text-xl"
+      >
+        Title Name
+      </h1>
+      <div
+        className="tag pt-1"
+      >
+        <div
+          className="tag_inner flex"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card tag single 1`] = `
+<div
+  className="card w-60 h-12 cursor-pointer"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  <div
+    className="card_inner flex"
+  >
+    <div
+      className="emoji flex flex-row items-center justify-center mr-3 w-12 h-12 bg-white rounded-lg"
+    >
+      <div
+        className="emoji_inner w-6 h-6 text-5xl"
+      >
+        🎵
+      </div>
+    </div>
+    <div
+      className="text flex-1"
+    >
+      <h1
+        className="break-all text-lg font-bold md:text-xl"
+      >
+        Title Name
+      </h1>
+      <div
+        className="tag pt-1"
+      >
+        <div
+          className="tag_inner flex"
+        >
+          <div
+            className="mr-1 p-0 text-href"
+          >
+            <a
+              href="/tags/1"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              #Title Name
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

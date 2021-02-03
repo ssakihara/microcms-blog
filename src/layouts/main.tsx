@@ -15,4 +15,5 @@ const App: React.FC<Props> = (props) => {
     </>
   )
 }
+
 export default App

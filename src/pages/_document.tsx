@@ -1,7 +1,6 @@
 /* eslint-disable */
 import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document'
 import React from 'react'
-
 import { GA_TRACKING_ID } from '../plugins/gtag'
 
 interface WithNonceProp {

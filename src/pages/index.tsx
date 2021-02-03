@@ -5,9 +5,11 @@ import { Content } from '@/types/microcms'
 import { GetStaticProps } from 'next'
 import { NextSeo } from 'next-seo'
 import React from 'react'
+
 interface Props {
   contents: Content[]
 }
+
 const App: React.FC<Props> = (props) => {
   return (
     <>
@@ -19,7 +21,7 @@ const App: React.FC<Props> = (props) => {
         <div className="flex flex-wrap justify-between pt-7">
           {props.contents.map((content) => {
             return (
-              <div className="my-2" key={content.id}>
+              <div className="my-2 w-full md:w-5/12" key={content.id}>
                 <Card content={content}></Card>
               </div>
             )

@@ -10,6 +10,7 @@ interface Props {
   tag: Tag
   contents: Content[]
 }
+
 const App: React.FC<Props> = (props) => {
   return (
     <>
@@ -24,7 +25,11 @@ const App: React.FC<Props> = (props) => {
         </div>
         <div className="flex flex-wrap justify-between pt-7">
           {props.contents.map((content) => {
-            return <Card content={content} key={content.id}></Card>
+            return (
+              <div className="my-2 w-full md:w-5/12" key={content.id}>
+                <Card content={content}></Card>
+              </div>
+            )
           })}
         </div>
       </Main>

@@ -11,6 +11,7 @@ import React from 'react'
 interface Props {
   content: Content
 }
+
 const App: React.FC<Props> = (props) => {
   const updatedAt = dayjs(props.content.updatedAt).format('YYYY/MM/DD HH:mm')
   return (
@@ -55,6 +56,7 @@ export const getStaticPaths: GetStaticPaths<any> = async () => {
     fallback: false,
   }
 }
+
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = context.params.id
   const response = await getContent<Content>(`content/${id}`)
@@ -65,4 +67,5 @@ export const getStaticProps: GetStaticProps = async (context) => {
     },
   }
 }
+
 export default App

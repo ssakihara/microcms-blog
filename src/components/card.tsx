@@ -15,7 +15,7 @@ const App: React.FC<Props> = (props) => {
   return (
     <>
       <Link href={`/contents/${props.content.id}`} key={props.content.id}>
-        <div className="card max-w-60 h-12 cursor-pointer md:w-60">
+        <div className="card h-12 cursor-pointer">
           <div className="card_inner flex">
             <div className="emoji flex flex-row items-center justify-center mr-3 w-12 h-12 bg-white rounded-lg">
               <div className="emoji_inner w-6 h-6 text-5xl">{emojiArr[num].emoji}</div>

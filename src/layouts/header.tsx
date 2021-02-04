@@ -1,3 +1,5 @@
+import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import React from 'react'
 
@@ -12,12 +14,12 @@ const App: React.FC = () => {
           <div className="link flex items-center justify-between w-6 h-full cursor-pointer">
             <div className="twitter">
               <a href={process.env.NEXT_PUBLIC_TWITTER_URL} target="_blank" rel="noreferrer">
-                <i className="fab fa-twitter"></i>
+                <FontAwesomeIcon icon={faTwitter} />
               </a>
             </div>
             <div className="github">
               <a href={process.env.NEXT_PUBLIC_GITHUB_URL} target="_blank" rel="noreferrer">
-                <i className="fab fa-github"></i>
+                <FontAwesomeIcon icon={faGithub} />
               </a>
             </div>
           </div>

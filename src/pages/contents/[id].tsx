@@ -3,6 +3,8 @@ import Main from '@/components/main'
 import dayjs from '@/plugins/dayjs'
 import { getContent, getContents } from '@/plugins/microcms'
 import { Content } from '@/types/microcms'
+import { faSyncAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
@@ -24,7 +26,7 @@ const App: React.FC<Props> = (props) => {
         <div className="px-1 py-8">
           <h1 className="mb-1 text-2xl font-bold md:text-3xl">{props.content.title}</h1>
           <span className="text-gray-400">
-            <i className="fas fa-sync-alt mr-1"></i>
+            <FontAwesomeIcon icon={faSyncAlt} className="mr-1" />
             <span>{updatedAt}</span>
             {props.content.tags.map((tag) => {
               return (

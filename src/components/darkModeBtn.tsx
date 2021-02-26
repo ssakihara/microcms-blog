@@ -1,8 +1,13 @@
+import { event } from '@/plugins/gtag'
 import { useTheme } from 'next-themes'
 import React from 'react'
 
 const App: React.FC = () => {
   const { theme, setTheme } = useTheme()
+  const onClick = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark')
+    event({ action: 'changeTheme', category: 'debug', label: `to ${theme}` })
+  }
   const defaultChecked = theme === 'dark'
   return (
     <>
@@ -12,7 +17,7 @@ const App: React.FC = () => {
           name="toggle"
           id="toggle"
           className="toggle-checkbox absolute block w-6 h-6 bg-white border-4 rounded-full appearance-none cursor-pointer"
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          onClick={onClick}
           defaultChecked={defaultChecked}
         />
         <label

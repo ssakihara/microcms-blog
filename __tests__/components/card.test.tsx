@@ -1,4 +1,4 @@
-import Card from '@/components/card'
+import Card from '@/components/Parts/Card'
 import { Content } from '@/types/microcms'
 import React from 'react'
 import renderer from 'react-test-renderer'

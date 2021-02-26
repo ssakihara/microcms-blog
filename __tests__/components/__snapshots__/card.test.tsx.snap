@@ -2,7 +2,7 @@
 
 exports[`Card tag multiple 1`] = `
 <div
-  className="card h-12 cursor-pointer"
+  className="card h-24 cursor-pointer"
   onClick={[Function]}
   onMouseEnter={[Function]}
 >
@@ -10,10 +10,10 @@ exports[`Card tag multiple 1`] = `
     className="card_inner flex"
   >
     <div
-      className="emoji flex flex-row items-center justify-center mr-3 w-12 h-12 bg-white rounded-lg"
+      className="emoji flex flex-row items-center justify-center mr-6 w-24 h-24 bg-white rounded-lg"
     >
       <div
-        className="emoji_inner w-6 h-6 text-5xl"
+        className="emoji_inner w-12 h-12 text-5xl"
       >
         🎵
       </div>
@@ -22,7 +22,7 @@ exports[`Card tag multiple 1`] = `
       className="text flex-1"
     >
       <h1
-        className="break-all text-lg font-bold md:text-xl"
+        className="dark:text-white break-all text-lg font-bold md:text-xl"
       >
         Title Name
       </h1>
@@ -33,7 +33,7 @@ exports[`Card tag multiple 1`] = `
           className="tag_inner flex"
         >
           <div
-            className="mr-1 p-0 text-href"
+            className="mr-2 p-0 text-href"
           >
             <a
               href="/tags/1"
@@ -44,7 +44,7 @@ exports[`Card tag multiple 1`] = `
             </a>
           </div>
           <div
-            className="mr-1 p-0 text-href"
+            className="mr-2 p-0 text-href"
           >
             <a
               href="/tags/2"
@@ -63,7 +63,7 @@ exports[`Card tag multiple 1`] = `
 
 exports[`Card tag none 1`] = `
 <div
-  className="card h-12 cursor-pointer"
+  className="card h-24 cursor-pointer"
   onClick={[Function]}
   onMouseEnter={[Function]}
 >
@@ -71,10 +71,10 @@ exports[`Card tag none 1`] = `
     className="card_inner flex"
   >
     <div
-      className="emoji flex flex-row items-center justify-center mr-3 w-12 h-12 bg-white rounded-lg"
+      className="emoji flex flex-row items-center justify-center mr-6 w-24 h-24 bg-white rounded-lg"
     >
       <div
-        className="emoji_inner w-6 h-6 text-5xl"
+        className="emoji_inner w-12 h-12 text-5xl"
       >
         🎵
       </div>
@@ -83,7 +83,7 @@ exports[`Card tag none 1`] = `
       className="text flex-1"
     >
       <h1
-        className="break-all text-lg font-bold md:text-xl"
+        className="dark:text-white break-all text-lg font-bold md:text-xl"
       >
         Title Name
       </h1>
@@ -101,7 +101,7 @@ exports[`Card tag none 1`] = `
 
 exports[`Card tag single 1`] = `
 <div
-  className="card h-12 cursor-pointer"
+  className="card h-24 cursor-pointer"
   onClick={[Function]}
   onMouseEnter={[Function]}
 >
@@ -109,10 +109,10 @@ exports[`Card tag single 1`] = `
     className="card_inner flex"
   >
     <div
-      className="emoji flex flex-row items-center justify-center mr-3 w-12 h-12 bg-white rounded-lg"
+      className="emoji flex flex-row items-center justify-center mr-6 w-24 h-24 bg-white rounded-lg"
     >
       <div
-        className="emoji_inner w-6 h-6 text-5xl"
+        className="emoji_inner w-12 h-12 text-5xl"
       >
         🎵
       </div>
@@ -121,7 +121,7 @@ exports[`Card tag single 1`] = `
       className="text flex-1"
     >
       <h1
-        className="break-all text-lg font-bold md:text-xl"
+        className="dark:text-white break-all text-lg font-bold md:text-xl"
       >
         Title Name
       </h1>
@@ -132,7 +132,7 @@ exports[`Card tag single 1`] = `
           className="tag_inner flex"
         >
           <div
-            className="mr-1 p-0 text-href"
+            className="mr-2 p-0 text-href"
           >
             <a
               href="/tags/1"

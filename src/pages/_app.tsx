@@ -3,6 +3,7 @@ import '../../styles/app.css'
 import '../../styles/tailwind-util.css'
 import Layout from '@/layouts/main'
 import * as gtag from '@/plugins/gtag'
+import { ThemeProvider } from 'next-themes'
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import React from 'react'
@@ -21,9 +22,11 @@ const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   }, [router.events])
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ThemeProvider attribute="class">
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
   )
 }
 

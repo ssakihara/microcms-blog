@@ -21,10 +21,10 @@ const App: React.FC<Props> = (props) => {
       const filenameTextClass = `<div class="filename_text">${name}</div>`
       const flexClass = `<div class="flex">${filenameTextClass}</div>`
       const filenameContainerClass = `<div class="filename container mx-auto">${flexClass}</div>`
-      $(elm).html(`${filenameContainerClass}<div class="js-copy-${i} p-2" onClick="${onClick}">${result.value}</div>`)
+      $(elm).html(`${filenameContainerClass}<div class="js-copy-${i} p-4" onClick="${onClick}">${result.value}</div>`)
     } else {
       const result = hljs.highlightAuto(text)
-      $(elm).html(`<div class="js-copy-${i} p-2" onClick="${onClick}">${result.value}</div>`)
+      $(elm).html(`<div class="js-copy-${i} p-4" onClick="${onClick}">${result.value}</div>`)
     }
     $(elm).addClass('hljs cursor-pointer')
   })

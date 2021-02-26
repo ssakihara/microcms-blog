@@ -19,14 +19,14 @@ const App: React.FC<Props> = (props) => {
         description={`Tag ${props.tag.name}`}
       />
       <Main class="bg-top">
-        <div className="flex pt-7">
-          <span className="mr-2 text-3xl md:text-4xl">Tag</span>
+        <div className="flex pt-14 dark:text-white">
+          <span className="mr-4 text-3xl md:text-4xl">Tag</span>
           <span className="break-all text-3xl md:text-4xl">{props.tag.name}</span>
         </div>
-        <div className="flex flex-wrap justify-between pt-7">
+        <div className="flex flex-wrap justify-between pt-14">
           {props.contents.map((content) => {
             return (
-              <div className="my-2 w-full md:w-5/12" key={content.id}>
+              <div className="my-5 w-full md:w-5/12" key={content.id}>
                 <Card content={content}></Card>
               </div>
             )

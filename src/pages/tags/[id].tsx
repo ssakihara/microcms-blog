@@ -1,5 +1,5 @@
-import Card from '@/components/card'
-import Main from '@/components/main'
+import Main from '@/components/Layout/Main'
+import Card from '@/components/Parts/Card'
 import { getContent, getContents } from '@/plugins/microcms'
 import { Content, Tag } from '@/types/microcms'
 import { GetStaticProps, GetStaticPaths } from 'next'

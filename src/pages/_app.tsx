@@ -1,7 +1,7 @@
 import '../../styles/tailwind.css'
 import '../../styles/app.css'
 import '../../styles/tailwind-util.css'
-import Layout from '@/layouts/main'
+import Layout from '@/components/Layout/Layout'
 import * as gtag from '@/plugins/gtag'
 import { ThemeProvider } from 'next-themes'
 import { AppProps } from 'next/app'

@@ -1,4 +1,4 @@
-import DarkModeBtn from '@/components/darkModeBtn'
+import DarkModeBtn from '@/components/Button/DarkMode'
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'

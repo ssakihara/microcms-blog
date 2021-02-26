@@ -1,5 +1,5 @@
-import Footer from '@/layouts/footer'
-import Header from '@/layouts/header'
+import Footer from '@/components/Layout/Footer'
+import Header from '@/components/Layout/Header'
 import React from 'react'
 
 interface Props {

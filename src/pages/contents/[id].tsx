@@ -1,5 +1,5 @@
-import Html from '@/components/html'
-import Main from '@/components/main'
+import Main from '@/components/Layout/Main'
+import Html from '@/components/Parts/Html'
 import dayjs from '@/plugins/dayjs'
 import { getContent, getContents } from '@/plugins/microcms'
 import { Content } from '@/types/microcms'

@@ -6,7 +6,7 @@ const App: React.FC = () => {
   const { theme, setTheme } = useTheme()
   const onClick = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
-    event({ action: 'changeTheme', category: 'debug', label: `to ${theme}` })
+    event({ action: 'change_theme', category: 'debug', label: `to ${theme}` })
   }
   const defaultChecked = theme === 'dark'
   return (

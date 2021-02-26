@@ -28,8 +28,9 @@ function getHtml({ title }): string {
 
 export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
   const title = req.query.title
-  const options = await getLaunchOptions()
-  const browser = await playwright.launchChromium(options)
+  // const options = await getLaunchOptions()
+  // const browser = await playwright.launchChromium(options)
+  const browser = await playwright.launchChromium()
   const page = await browser.newPage({
     viewport: {
       width: 1200,

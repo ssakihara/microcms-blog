@@ -23,21 +23,21 @@ const App: React.FC<Props> = (props) => {
         description={`${props.content.description}`}
       />
       <Main class="bg-contents">
-        <div className="px-1 py-8">
-          <h1 className="mb-1 text-2xl font-bold md:text-3xl">{props.content.title}</h1>
+        <div className="px-2 py-16">
+          <h1 className="mb-2 dark:text-white text-2xl font-bold md:text-3xl">{props.content.title}</h1>
           <span className="text-gray-400">
-            <FontAwesomeIcon icon={faSyncAlt} className="mr-1" />
+            <FontAwesomeIcon icon={faSyncAlt} className="mr-2" />
             <span>{updatedAt}</span>
             {props.content.tags.map((tag) => {
               return (
-                <span className="ml-1 text-href" key={tag.id}>
+                <span className="ml-2 text-href" key={tag.id}>
                   <Link href={`/tags/${tag.id}`}>{`#${tag.name}`}</Link>
                 </span>
               )
             })}
           </span>
         </div>
-        <div className="pb-10">
+        <div className="pb-20">
           <Html html={props.content.body}></Html>
         </div>
       </Main>

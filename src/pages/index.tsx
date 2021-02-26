@@ -14,14 +14,14 @@ const App: React.FC<Props> = (props) => {
   return (
     <>
       <NextSeo title={process.env.NEXT_PUBLIC_APP_NAME} description={process.env.NEXT_PUBLIC_APP_DESCRIPTION} />
-      <Main class="px-1 bg-top">
-        <div className="flex pt-7">
-          <span className="text-4xl">Contents</span>
+      <Main class="px-2 bg-top">
+        <div className="flex pt-14">
+          <span className="dark:text-white text-4xl">Contents</span>
         </div>
-        <div className="flex flex-wrap justify-between pt-7">
+        <div className="flex flex-wrap justify-between pt-14">
           {props.contents.map((content) => {
             return (
-              <div className="my-2 w-full md:w-5/12" key={content.id}>
+              <div className="my-4 w-full md:w-5/12" key={content.id}>
                 <Card content={content}></Card>
               </div>
             )

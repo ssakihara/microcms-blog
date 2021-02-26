@@ -21,19 +21,19 @@ const App: React.FC<Props> = (props) => {
       <NextSeo
         title={`${props.content.title} | ${process.env.NEXT_PUBLIC_APP_NAME}`}
         description={`${props.content.description}`}
-        openGraph={{
-          url: process.env.NEXT_PUBLIC_APP_URL,
-          title: `${props.content.title} | ${process.env.NEXT_PUBLIC_APP_NAME}`,
-          description: props.content.description,
-          images: [
-            {
-              url: `${process.env.NEXT_PUBLIC_APP_URL}/api/ogp?title=${props.content.title}`,
-              width: 1200,
-              height: 630,
-            },
-          ],
-          site_name: process.env.NEXT_PUBLIC_APP_NAME,
-        }}
+        // openGraph={{
+        //   url: process.env.NEXT_PUBLIC_APP_URL,
+        //   title: `${props.content.title} | ${process.env.NEXT_PUBLIC_APP_NAME}`,
+        //   description: props.content.description,
+        //   images: [
+        //     {
+        //       url: `${process.env.NEXT_PUBLIC_APP_URL}/api/ogp?title=${props.content.title}`,
+        //       width: 1200,
+        //       height: 630,
+        //     },
+        //   ],
+        //   site_name: process.env.NEXT_PUBLIC_APP_NAME,
+        // }}
       />
       <Main class="bg-contents">
         <div className="px-1 py-8">

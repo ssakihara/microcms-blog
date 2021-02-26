@@ -3,7 +3,7 @@ import React from 'react'
 
 const App: React.FC = () => {
   const { theme, setTheme } = useTheme()
-  const checked = theme === 'dark'
+  const defaultChecked = theme === 'dark'
   return (
     <>
       <div className="relative inline-block align-middle mr-2 w-10 select-none transition duration-200 ease-in">
@@ -13,7 +13,7 @@ const App: React.FC = () => {
           id="toggle"
           className="toggle-checkbox absolute block w-6 h-6 bg-white border-4 rounded-full appearance-none cursor-pointer"
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-          checked={checked}
+          defaultChecked={defaultChecked}
         />
         <label
           htmlFor="toggle"

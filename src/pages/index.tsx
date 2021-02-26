@@ -13,23 +13,7 @@ interface Props {
 const App: React.FC<Props> = (props) => {
   return (
     <>
-      <NextSeo
-        title={process.env.NEXT_PUBLIC_APP_NAME}
-        description={process.env.NEXT_PUBLIC_APP_DESCRIPTION}
-        // openGraph={{
-        //   url: process.env.NEXT_PUBLIC_APP_URL,
-        //   title: process.env.NEXT_PUBLIC_APP_NAME,
-        //   description: process.env.NEXT_PUBLIC_APP_DESCRIPTION,
-        //   images: [
-        //     {
-        //       url: `${process.env.NEXT_PUBLIC_APP_URL}/api/ogp?title=${process.env.NEXT_PUBLIC_APP_NAME}`,
-        //       width: 1200,
-        //       height: 630,
-        //     },
-        //   ],
-        //   site_name: process.env.NEXT_PUBLIC_APP_NAME,
-        // }}
-      />
+      <NextSeo title={process.env.NEXT_PUBLIC_APP_NAME} description={process.env.NEXT_PUBLIC_APP_DESCRIPTION} />
       <Main class="px-1 bg-top">
         <div className="flex pt-7">
           <span className="text-4xl">Contents</span>

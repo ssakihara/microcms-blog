@@ -8,7 +8,7 @@ interface Props {
 const App: React.FC<Props> = (props) => {
   return (
     <>
-      <main className={`${props.class} px-2 min-h-main dark:bg-gray-800`}>
+      <main className={`${props.class} min-h-main dark:bg-gray-800`}>
         <div className="container mx-auto max-w-screen-lg">{props.children}</div>
       </main>
     </>

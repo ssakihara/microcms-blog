@@ -1,3 +1,4 @@
+import Text from '@/components/DarkMode/Text'
 import Main from '@/components/Layout/Main'
 import Card from '@/components/Parts/Card'
 import { getContent, getContents } from '@/plugins/microcms'
@@ -18,11 +19,11 @@ const App: React.FC<Props> = (props) => {
         title={`Tag ${props.tag.name} | ${process.env.NEXT_PUBLIC_APP_NAME}`}
         description={`Tag ${props.tag.name}`}
       />
-      <Main class="bg-top">
-        <div className="flex pt-14 dark:text-white">
+      <Main class="px-2 bg-top">
+        <Text className="flex pt-14">
           <span className="mr-4 text-3xl md:text-4xl">Tag</span>
           <span className="break-all text-3xl md:text-4xl">{props.tag.name}</span>
-        </div>
+        </Text>
         <div className="flex flex-wrap justify-between pt-14">
           {props.contents.map((content) => {
             return (

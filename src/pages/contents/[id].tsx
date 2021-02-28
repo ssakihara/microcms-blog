@@ -1,3 +1,4 @@
+import Text from '@/components/DarkMode/Text'
 import Main from '@/components/Layout/Main'
 import Html from '@/components/Parts/Html'
 import dayjs from '@/plugins/dayjs'
@@ -24,7 +25,9 @@ const App: React.FC<Props> = (props) => {
       />
       <Main class="bg-contents">
         <div className="px-2 py-16">
-          <h1 className="mb-2 dark:text-white text-2xl font-bold md:text-3xl">{props.content.title}</h1>
+          <Text>
+            <h1 className="mb-2 text-2xl font-bold md:text-3xl">{props.content.title}</h1>
+          </Text>
           <span className="text-gray-400">
             <FontAwesomeIcon icon={faSyncAlt} className="mr-2" />
             <span>{updatedAt}</span>

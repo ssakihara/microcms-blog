@@ -21,11 +21,15 @@ exports[`Card tag multiple 1`] = `
     <div
       className="text flex-1"
     >
-      <h1
-        className="dark:text-white break-all text-lg font-bold md:text-xl"
+      <span
+        className="text-black dark:text-white "
       >
-        Title Name
-      </h1>
+        <h1
+          className="break-all text-lg font-bold md:text-xl"
+        >
+          Title Name
+        </h1>
+      </span>
       <div
         className="tag pt-1"
       >
@@ -82,11 +86,15 @@ exports[`Card tag none 1`] = `
     <div
       className="text flex-1"
     >
-      <h1
-        className="dark:text-white break-all text-lg font-bold md:text-xl"
+      <span
+        className="text-black dark:text-white "
       >
-        Title Name
-      </h1>
+        <h1
+          className="break-all text-lg font-bold md:text-xl"
+        >
+          Title Name
+        </h1>
+      </span>
       <div
         className="tag pt-1"
       >
@@ -120,11 +128,15 @@ exports[`Card tag single 1`] = `
     <div
       className="text flex-1"
     >
-      <h1
-        className="dark:text-white break-all text-lg font-bold md:text-xl"
+      <span
+        className="text-black dark:text-white "
       >
-        Title Name
-      </h1>
+        <h1
+          className="break-all text-lg font-bold md:text-xl"
+        >
+          Title Name
+        </h1>
+      </span>
       <div
         className="tag pt-1"
       >

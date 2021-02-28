@@ -1,7 +1,7 @@
 import DarkModeBtn from '@/components/Button/DarkMode'
+import Link from '@/components/DarkMode/Link'
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Link from 'next/link'
 import React from 'react'
 
 const App: React.FC = () => {
@@ -10,10 +10,8 @@ const App: React.FC = () => {
       <header className="dark:bg-gray-900">
         <div className="header container mx-auto px-1 h-16">
           <div className="header_inner flex items-center justify-between h-full dark:text-white">
-            <Link href="/">
-              <span className="header_title dark:text-white text-2xl font-bold cursor-pointer">
-                {process.env.NEXT_PUBLIC_APP_NAME}
-              </span>
+            <Link href="/" className="header_title text-2xl font-bold cursor-pointer">
+              {process.env.NEXT_PUBLIC_APP_NAME}
             </Link>
             <div className="link flex items-center justify-between w-24 h-full cursor-pointer">
               <div className="twitter">

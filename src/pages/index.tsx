@@ -1,3 +1,4 @@
+import Text from '@/components/DarkMode/Text'
 import Main from '@/components/Layout/Main'
 import Card from '@/components/Parts/Card'
 import { getContents } from '@/plugins/microcms'
@@ -16,7 +17,7 @@ const App: React.FC<Props> = (props) => {
       <NextSeo title={process.env.NEXT_PUBLIC_APP_NAME} description={process.env.NEXT_PUBLIC_APP_DESCRIPTION} />
       <Main class="px-2 bg-top">
         <div className="flex pt-14">
-          <span className="dark:text-white text-4xl">Contents</span>
+          <Text className="text-4xl">Contents</Text>
         </div>
         <div className="flex flex-wrap justify-between pt-14">
           {props.contents.map((content) => {

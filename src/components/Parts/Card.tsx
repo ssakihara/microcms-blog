@@ -1,3 +1,4 @@
+import Text from '@/components/DarkMode/Text'
 import dayjs from '@/plugins/dayjs'
 import { Content } from '@/types/microcms'
 import Link from 'next/link'
@@ -21,7 +22,9 @@ const App: React.FC<Props> = (props) => {
               <div className="emoji_inner w-12 h-12 text-5xl">{emojiArr[num].emoji}</div>
             </div>
             <div className="text flex-1">
-              <h1 className="dark:text-white break-all text-lg font-bold md:text-xl">{props.content.title}</h1>
+              <Text>
+                <h1 className="break-all text-lg font-bold md:text-xl">{props.content.title}</h1>
+              </Text>
               <div className="tag pt-1">
                 <div className="tag_inner flex">
                   {props.content.tags.map((tag) => {

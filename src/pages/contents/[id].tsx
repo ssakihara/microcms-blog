@@ -1,15 +1,16 @@
-import Text from '@/components/DarkMode/Text'
-import Main from '@/components/Layout/Main'
-import Html from '@/components/Parts/Html'
-import dayjs from '@/plugins/dayjs'
-import { getContent, getContents } from '@/plugins/microcms'
-import { Content } from '@/types/microcms'
 import { faSyncAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Text from 'components/DarkMode/Text'
+import Main from 'components/Layout/Main'
+import Html from 'components/Parts/Html'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
+import dayjs from 'plugins/dayjs'
+import { getContent, getContents } from 'plugins/microcms'
 import React from 'react'
+import styles from 'styles/pages/contents/id.module.css'
+import { Content } from 'types/microcms'
 
 interface Props {
   content: Content
@@ -41,7 +42,7 @@ const App: React.FC<Props> = (props) => {
           </span>
         </div>
         <div className="pb-20">
-          <Html html={props.content.body}></Html>
+          <Html html={props.content.body} className={`${styles.html}`}></Html>
         </div>
       </Main>
     </>

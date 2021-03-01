@@ -1,7 +1,7 @@
-import Text from '@/components/DarkMode/Text'
-import dayjs from '@/plugins/dayjs'
 import { faCopyright } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Text from 'components/DarkMode/Text'
+import dayjs from 'plugins/dayjs'
 import React from 'react'
 
 const App: React.FC = () => {

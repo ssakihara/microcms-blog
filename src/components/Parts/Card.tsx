@@ -1,9 +1,9 @@
-import Text from '@/components/DarkMode/Text'
-import dayjs from '@/plugins/dayjs'
-import { Content } from '@/types/microcms'
+import Text from 'components/DarkMode/Text'
 import Link from 'next/link'
 import emoji from 'node-emoji/lib/emoji.json'
+import dayjs from 'plugins/dayjs'
 import React from 'react'
+import { Content } from 'types/microcms'
 
 interface Props {
   content: Content

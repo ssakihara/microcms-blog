@@ -1,7 +1,7 @@
-import DarkModeBtn from '@/components/Button/DarkMode'
-import Link from '@/components/DarkMode/Link'
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import DarkModeBtn from 'components/Button/DarkMode'
+import Link from 'components/DarkMode/Link'
 import React from 'react'
 
 const App: React.FC = () => {

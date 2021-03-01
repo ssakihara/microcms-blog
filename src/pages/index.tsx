@@ -1,11 +1,11 @@
-import Text from '@/components/DarkMode/Text'
-import Main from '@/components/Layout/Main'
-import Card from '@/components/Parts/Card'
-import { getContents } from '@/plugins/microcms'
-import { Content } from '@/types/microcms'
+import Text from 'components/DarkMode/Text'
+import Main from 'components/Layout/Main'
+import Card from 'components/Parts/Card'
 import { GetStaticProps } from 'next'
 import { NextSeo } from 'next-seo'
+import { getContents } from 'plugins/microcms'
 import React from 'react'
+import { Content } from 'types/microcms'
 
 interface Props {
   contents: Content[]

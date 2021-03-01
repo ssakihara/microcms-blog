@@ -4,6 +4,7 @@ import React from 'react'
 import 'highlight.js/styles/hybrid.css'
 
 interface Props {
+  className: string
   html: string
 }
 
@@ -31,7 +32,7 @@ const App: React.FC<Props> = (props) => {
 
   return (
     <>
-      <div className="html" dangerouslySetInnerHTML={{ __html: $.html() }}></div>
+      <div className={`${props.className}`} dangerouslySetInnerHTML={{ __html: $.html() }}></div>
     </>
   )
 }

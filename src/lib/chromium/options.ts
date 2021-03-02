@@ -13,6 +13,13 @@ interface Options {
 }
 
 export async function getOptions(isDev: boolean): Promise<any> {
+  chrome.font(
+    'https://rawcdn.githack.com/minoryorg/Noto-Sans-CJK-JP/7fbcb560ac433b37f7f0e65507e78924b717f7a7/fonts/NotoSansCJKjp-Bold.ttf'
+  )
+  chrome.font(
+    'https://rawcdn.githack.com/minoryorg/Noto-Sans-CJK-JP/7fbcb560ac433b37f7f0e65507e78924b717f7a7/fonts/NotoSansCJKjp-Regular.ttf'
+  )
+
   let options: Options
   if (isDev) {
     options = {

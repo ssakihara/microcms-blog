@@ -14,7 +14,28 @@ interface Props {
 const App: React.FC<Props> = (props) => {
   return (
     <>
-      <NextSeo title={process.env.NEXT_PUBLIC_APP_NAME} description={process.env.NEXT_PUBLIC_APP_DESCRIPTION} />
+      <NextSeo
+        title={process.env.NEXT_PUBLIC_APP_NAME}
+        description={process.env.NEXT_PUBLIC_APP_DESCRIPTION}
+        openGraph={{
+          url: process.env.NEXT_PUBLIC_APP_URL,
+          title: process.env.NEXT_PUBLIC_APP_NAME,
+          description: process.env.NEXT_PUBLIC_APP_DESCRIPTION,
+          images: [
+            {
+              url: `${process.env.NEXT_PUBLIC_APP_URL}/api/ogp?title=${process.env.NEXT_PUBLIC_APP_NAME}`,
+              width: 1200,
+              height: 840,
+            },
+          ],
+          site_name: process.env.NEXT_PUBLIC_APP_NAME,
+        }}
+        twitter={{
+          handle: `@${process.env.NEXT_PUBLIC_TWITTER_HANDLE}`,
+          site: process.env.NEXT_PUBLIC_APP_NAME,
+          cardType: 'summary_large_image',
+        }}
+      />
       <Main class="px-2 bg-top">
         <div className="flex pt-14">
           <Text className="text-4xl">Contents</Text>

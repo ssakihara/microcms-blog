@@ -12,7 +12,6 @@ function getCss() {
     justify-content: center;
   }
   .heading {
-    font-family: 'Inter', sans-serif;
     font-size: 64px;
     font-style: normal;
     line-height: 1.8;
@@ -21,6 +20,7 @@ function getCss() {
 }
 
 function getHtml(title: string) {
+  console.log(title)
   return `<!DOCTYPE html>
   <html>
       <meta charset="utf-8">

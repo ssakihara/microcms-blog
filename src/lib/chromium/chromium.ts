@@ -14,7 +14,7 @@ async function getPage(isDev: boolean) {
 
 export async function getScreenshot(html: string, isDev: boolean): Promise<any> {
   const page = await getPage(isDev)
-  await page.setViewport({ width: 2048, height: 1170 })
+  await page.setViewport({ width: 1200, height: 840 })
   await page.setContent(html)
   const file = await page.screenshot({ type: 'png' })
   return file

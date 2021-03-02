@@ -1,6 +1,7 @@
 import Text from 'components/DarkMode/Text'
 import Main from 'components/Layout/Main'
 import Card from 'components/Parts/Card'
+import { APP_NAME, APP_DESCRIPTION, TWITTER_HANDLE } from 'config'
 import { GetStaticProps } from 'next'
 import { NextSeo } from 'next-seo'
 import { getContents } from 'plugins/microcms'
@@ -15,24 +16,24 @@ const App: React.FC<Props> = (props) => {
   return (
     <>
       <NextSeo
-        title={process.env.NEXT_PUBLIC_APP_NAME}
-        description={process.env.NEXT_PUBLIC_APP_DESCRIPTION}
+        title={APP_NAME}
+        description={APP_DESCRIPTION}
         openGraph={{
           url: process.env.NEXT_PUBLIC_APP_URL,
-          title: process.env.NEXT_PUBLIC_APP_NAME,
-          description: process.env.NEXT_PUBLIC_APP_DESCRIPTION,
+          title: APP_NAME,
+          description: APP_DESCRIPTION,
           images: [
             {
-              url: `${process.env.NEXT_PUBLIC_APP_URL}/api/ogp?title=${process.env.NEXT_PUBLIC_APP_NAME}`,
+              url: `${process.env.NEXT_PUBLIC_APP_URL}/api/ogp?title=${APP_NAME}`,
               width: 1200,
               height: 840,
             },
           ],
-          site_name: process.env.NEXT_PUBLIC_APP_NAME,
+          site_name: APP_NAME,
         }}
         twitter={{
-          handle: `@${process.env.NEXT_PUBLIC_TWITTER_HANDLE}`,
-          site: process.env.NEXT_PUBLIC_APP_NAME,
+          handle: `@${TWITTER_HANDLE}`,
+          site: APP_NAME,
           cardType: 'summary_large_image',
         }}
       />

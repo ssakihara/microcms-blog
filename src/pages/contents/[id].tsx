@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Text from 'components/DarkMode/Text'
 import Main from 'components/Layout/Main'
 import Html from 'components/Parts/Html'
+import { APP_NAME, TWITTER_HANDLE } from 'config'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
@@ -21,11 +22,11 @@ const App: React.FC<Props> = (props) => {
   return (
     <>
       <NextSeo
-        title={`${props.content.title} | ${process.env.NEXT_PUBLIC_APP_NAME}`}
+        title={`${props.content.title} | ${APP_NAME}`}
         description={`${props.content.description}`}
         openGraph={{
           url: process.env.NEXT_PUBLIC_APP_URL,
-          title: `${props.content.title} | ${process.env.NEXT_PUBLIC_APP_NAME}`,
+          title: `${props.content.title} | ${APP_NAME}`,
           description: props.content.description,
           images: [
             {
@@ -34,11 +35,11 @@ const App: React.FC<Props> = (props) => {
               height: 840,
             },
           ],
-          site_name: process.env.NEXT_PUBLIC_APP_NAME,
+          site_name: APP_NAME,
         }}
         twitter={{
-          handle: `@${process.env.NEXT_PUBLIC_TWITTER_HANDLE}`,
-          site: process.env.NEXT_PUBLIC_APP_NAME,
+          handle: `@${TWITTER_HANDLE}`,
+          site: APP_NAME,
           cardType: 'summary_large_image',
         }}
       />

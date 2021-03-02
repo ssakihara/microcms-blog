@@ -18,6 +18,24 @@ const App: React.FC<Props> = (props) => {
       <NextSeo
         title={`Tag ${props.tag.name} | ${process.env.NEXT_PUBLIC_APP_NAME}`}
         description={`Tag ${props.tag.name}`}
+        openGraph={{
+          url: process.env.NEXT_PUBLIC_APP_URL,
+          title: `${props.tag.name} | ${process.env.NEXT_PUBLIC_APP_NAME}`,
+          description: `Tag ${props.tag.name}`,
+          images: [
+            {
+              url: `${process.env.NEXT_PUBLIC_APP_URL}/api/ogp?title=${props.tag.name}`,
+              width: 1200,
+              height: 840,
+            },
+          ],
+          site_name: process.env.NEXT_PUBLIC_APP_NAME,
+        }}
+        twitter={{
+          handle: `@${process.env.NEXT_PUBLIC_TWITTER_HANDLE}`,
+          site: process.env.NEXT_PUBLIC_APP_NAME,
+          cardType: 'summary_large_image',
+        }}
       />
       <Main class="px-2 bg-top">
         <Text className="flex pt-14">

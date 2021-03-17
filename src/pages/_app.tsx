@@ -1,5 +1,6 @@
 import 'styles/globals/tailwind.css'
 import 'styles/globals/tailwind-util.css'
+import 'styles/globals/app.css'
 import Layout from 'components/Layout/Layout'
 import { ThemeProvider } from 'next-themes'
 import { AppProps } from 'next/app'

@@ -1,0 +1,3 @@
+.filename_text {
+  @apply px-1 text-white text-sm font-normal bg-gray-600 rounded-br-lg md:text-base;
+}

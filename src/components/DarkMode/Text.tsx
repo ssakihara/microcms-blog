@@ -9,7 +9,7 @@ const App: React.FC<Props> = (props) => {
   const className = props.className ?? ''
   return (
     <>
-      <span className={`text-black dark:text-white ${className}`}>{props.children}</span>
+      <span className={`text-black ${className}`}>{props.children}</span>
     </>
   )
 }

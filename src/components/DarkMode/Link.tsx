@@ -11,7 +11,7 @@ const App: React.FC<Props> = (props) => {
   return (
     <>
       <Link href={props.href}>
-        <span className={`text-black dark:text-white ${props.className}`}>{props.children}</span>
+        <span className={`text-black ${props.className}`}>{props.children}</span>
       </Link>
     </>
   )

@@ -9,7 +9,7 @@ const App: React.FC = () => {
   const now = dayjs().format('YYYY')
   return (
     <>
-      <footer className="dark:bg-gray-900">
+      <footer>
         <div className="container mx-auto px-2 h-16">
           <Text className="flex items-center justify-center h-full">
             <a href={TWITTER_URL} target="_blank" rel="noreferrer">
